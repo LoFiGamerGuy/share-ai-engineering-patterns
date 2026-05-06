@@ -5,6 +5,8 @@
 <title>AI Engineering Patterns — a working catalogue</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/genkan.css">
+<!-- Cloudflare Web Analytics — see docs/SETUP-NOTES.md for activation -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "YOUR_CLOUDFLARE_BEACON_TOKEN_HERE"}'></script>
 <style>
   .fo-masthead {
     border-top: 3px solid var(--fg);
@@ -171,6 +173,57 @@
   }
   .fo-colophon ul li b { color: var(--fg); font-weight: 400; }
   @media (max-width: 880px) { .fo-colophon { grid-template-columns: 1fr; } }
+
+  /* Feedback form */
+  .fo-feedback {
+    border-top: 1px solid var(--rule);
+    padding: var(--space-9) 0 var(--space-7);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+    gap: var(--space-7);
+  }
+  .fo-feedback__head h3 {
+    font-family: var(--font-display); font-style: italic; font-weight: 400;
+    font-size: var(--fs-2xl); line-height: 1.05;
+    letter-spacing: var(--tracking-tight); color: var(--fg);
+    margin-bottom: var(--space-4);
+  }
+  .fo-feedback__head .fo-feedback__cap {
+    font-family: var(--font-mono); font-size: var(--fs-2xs);
+    letter-spacing: var(--tracking-caps); text-transform: uppercase;
+    color: var(--accent); margin-bottom: var(--space-3);
+  }
+  .fo-feedback__head p {
+    font-size: var(--fs-sm); line-height: 1.65; color: var(--fg-2);
+    margin-bottom: var(--space-3);
+  }
+  .fo-feedback__head a { color: var(--fg); border-bottom: 1px solid var(--accent); text-decoration: none; }
+  .fo-feedback form { display: flex; flex-direction: column; gap: var(--space-4); }
+  .fo-feedback label {
+    font-family: var(--font-mono); font-size: var(--fs-2xs);
+    letter-spacing: var(--tracking-caps); text-transform: uppercase;
+    color: var(--fg-3); display: block; margin-bottom: var(--space-2);
+  }
+  .fo-feedback input, .fo-feedback textarea {
+    font-family: var(--font-body); font-size: var(--fs-sm);
+    color: var(--fg); background: var(--bg); border: 1px solid var(--rule);
+    padding: var(--space-3) var(--space-4); width: 100%; box-sizing: border-box;
+    transition: border-color var(--dur-fast) var(--ease);
+  }
+  .fo-feedback input:focus, .fo-feedback textarea:focus {
+    outline: none; border-color: var(--accent);
+  }
+  .fo-feedback textarea { resize: vertical; min-height: 100px; font-family: var(--font-body); line-height: 1.55; }
+  .fo-feedback button {
+    font-family: var(--font-mono); font-size: var(--fs-2xs);
+    letter-spacing: var(--tracking-caps); text-transform: uppercase;
+    background: var(--fg); color: var(--bg); border: none;
+    padding: var(--space-3) var(--space-5);
+    cursor: pointer; align-self: flex-start;
+    transition: background var(--dur-fast) var(--ease);
+  }
+  .fo-feedback button:hover { background: var(--accent-deep); }
+  @media (max-width: 880px) { .fo-feedback { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -196,6 +249,19 @@
         without falling over, and how to instrument the whole thing so you can tell when it's
         broken. Nothing here is theoretical.
       </p>
+    </section>
+
+    <!-- Featured: quickstart (most prominent) -->
+    <section class="fo-feature" style="border-top-color: var(--accent-deep); border-bottom-color: var(--accent-deep);">
+      <div>
+        <div class="fo-feature__cap">— start here</div>
+        <h2 class="fo-feature__title">5 minutes to a working mental model.</h2>
+        <p class="fo-feature__pull">"Eight sections is a lot. The quickstart routes you to the three pages worth reading first."</p>
+      </div>
+      <div>
+        <p class="fo-feature__note">Not sure where to start? The <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/QUICKSTART.md"><b>QUICKSTART</b></a> gives you four reading paths based on who you are: <b>engineer</b>, <b>engineering leader</b>, <b>platform builder</b>, or <b>focused on safety</b>. Each path is exactly three pages, ~15 minutes, calibrated to give you a working model of what's happening before you commit to deeper reading.</p>
+        <p class="fo-feature__note" style="margin-top: var(--space-4);">Need a term defined? See the <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/GLOSSARY.md"><b>GLOSSARY</b></a> — single-page lookup for every load-bearing term used across the repo.</p>
+      </div>
     </section>
 
     <!-- Featured: leaders memo -->
@@ -626,6 +692,31 @@
       </div>
     </section>
 
+    <!-- Feedback form (for non-GitHub readers) -->
+    <section class="fo-feedback">
+      <div class="fo-feedback__head">
+        <div class="fo-feedback__cap">— for non-github readers</div>
+        <h3>Send a quick note.</h3>
+        <p>Found something useful? Disagree with a recommendation? Have a war story from your own practice? This form goes straight to the maintainer.</p>
+        <p>If you have a GitHub account, <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/issues/new">opening an issue</a> is preferred — it's public and lets others weigh in. This form is the path for everyone else.</p>
+      </div>
+      <form action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT_HERE" method="POST">
+        <div>
+          <label for="fb-name">Your name (optional)</label>
+          <input id="fb-name" type="text" name="name">
+        </div>
+        <div>
+          <label for="fb-email">Your email (optional, for reply)</label>
+          <input id="fb-email" type="email" name="email">
+        </div>
+        <div>
+          <label for="fb-message">Message</label>
+          <textarea id="fb-message" name="message" required></textarea>
+        </div>
+        <button type="submit">Send →</button>
+      </form>
+    </section>
+
     <footer class="fo-colophon">
       <div>
         <h5>About</h5>
@@ -639,10 +730,13 @@
       <div>
         <h5>Quick links</h5>
         <ul>
+          <li><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/QUICKSTART.md">Quickstart</a> <b>NEW</b></li>
+          <li><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/GLOSSARY.md">Glossary</a> <b>NEW</b></li>
           <li><a href="leaders-memo.html">Leader's memo</a> <b>HTML</b></li>
           <li><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/GUIDE-FOR-LEADERS.md">Leader's guide</a> <b>MD</b></li>
           <li><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns">Repo README</a> <b>MD</b></li>
           <li><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/CHANGELOG.md">Changelog</a> <b>MD</b></li>
+          <li><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/CONTRIBUTING.md">Contributing</a> <b>MD</b></li>
           <li><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/tree/main/examples">Examples</a> <b>DIR</b></li>
         </ul>
       </div>

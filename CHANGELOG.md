@@ -2,6 +2,20 @@
 
 All notable changes to this repo. The patterns themselves are durable; specific tool names, flags, and provider behaviors are snapshots and may drift over time.
 
+## [0.6.0] — 2026-05-06
+
+### Added
+- **`QUICKSTART.md`** — first-5-minutes entry path with four audience-specific reading routes (engineer / leader / platform builder / safety-focused). Surfaced prominently at the top of the main README and as the lead feature in the Foyer catalogue.
+- **`GLOSSARY.md`** — ~30-term single-page lookup for the load-bearing vocabulary used across sections (agent, centaur model, harness, hook, MCP, prompt injection, reflection, spec, spine, etc.).
+- **`CONTRIBUTING.md`** — how to suggest fixes, add war stories, contribute new content; how to disagree productively; style conventions.
+- **Cloudflare Web Analytics** snippet in both HTML pages (`docs/index.html`, `docs/leaders-memo.html`) — placeholder token, awaiting one-time activation. Free, cookieless, GDPR-compliant.
+- **Feedback form** on the Foyer catalogue (Formspree-backed) for non-GitHub readers — placeholder endpoint, awaiting one-time activation.
+- **`docs/SETUP-NOTES.md`** — documents the 5-minute activation steps for analytics and feedback form (both genuinely free at expected volumes).
+
+### Changed
+- Main `README.md` now leads with a prominent QUICKSTART callout block; adds a "Reference" section linking QUICKSTART, GLOSSARY, CHANGELOG, CONTRIBUTING.
+- Foyer catalogue (`docs/index.html`): new "start here" feature box at the top, before the leaders-memo feature; Quick Links footer expanded with QUICKSTART, GLOSSARY, CONTRIBUTING.
+
 ## [0.5.0] — 2026-05-06
 
 ### Added — seven new pages

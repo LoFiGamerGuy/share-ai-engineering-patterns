@@ -4,6 +4,12 @@ A practitioner's reference for building with AI agents — focused on the patter
 
 This repo collects the durable lessons from building agentic systems: how to structure context, when to trust which model, how multiple agents coordinate without falling over, how to keep cost and latency under control, and how to instrument the whole thing so you can tell when it's broken.
 
+> ## ⚡ Start here: [QUICKSTART](./QUICKSTART.md)
+>
+> Eight sections is a lot. The quickstart routes you to the **three pages worth reading first** based on whether you're an engineer, an engineering leader, a platform builder, or focused on safety. **5 minutes to a working mental model.**
+>
+> Already know what you're looking for? The [Foyer catalogue](https://lofigamerguy.github.io/share-ai-engineering-patterns/) lists every page in every section with a one-line description.
+
 ## Who this is for
 
 - **Engineering leaders** who want to understand how AI is actually being used by their teams and where the leverage is. Start with [GUIDE-FOR-LEADERS.md](./GUIDE-FOR-LEADERS.md).
@@ -53,8 +59,15 @@ Open either file in a browser locally, or host the `docs/` folder via GitHub Pag
 
 The patterns here reflect the state of the tools as of writing (May 2026). Models, harnesses, and protocols are moving fast. Treat the *pattern* as durable; treat the specific tool names and flags as snapshots. See [CHANGELOG.md](./CHANGELOG.md) for the version history.
 
+## Reference
+
+- [QUICKSTART](./QUICKSTART.md) — the three pages worth reading first, by audience
+- [GLOSSARY](./GLOSSARY.md) — single-page lookup for the load-bearing terms used across sections
+- [CHANGELOG](./CHANGELOG.md) — what's been added and when
+- [CONTRIBUTING](./CONTRIBUTING.md) — how to suggest fixes, add war stories, or contribute new content
+
 ## Author and license
 
 Written by **Ryan Gosnell**. Licensed under [CC BY 4.0](./LICENSE) — share, adapt, build on; just credit the source.
 
-If you find errors, have suggestions, or want to add patterns from your own work, contributions are welcome. The repo is meant to grow.
+If you find errors, have suggestions, or want to add patterns from your own work, contributions are welcome. See [CONTRIBUTING](./CONTRIBUTING.md). The repo is meant to grow.
