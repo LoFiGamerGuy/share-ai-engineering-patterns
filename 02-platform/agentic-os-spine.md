@@ -152,3 +152,9 @@ If you're starting from nothing and want the smallest useful spine:
 4. Add `specs/` directory (can be empty initially)
 
 That's it. Maybe 30 minutes of work. The payback starts on the first agent run.
+
+## See also
+
+- [07-tools-and-mcp/](../07-tools-and-mcp/) — the spine's tool layer; MCP servers, hooks, skills
+- [01-concepts/trust-and-specs.md](../01-concepts/trust-and-specs.md) — how the spine and trust calibration interact
+- [examples/example-CLAUDE.md](../examples/example-CLAUDE.md) — what a project-level context file looks like

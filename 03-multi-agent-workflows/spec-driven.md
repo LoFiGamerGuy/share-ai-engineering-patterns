@@ -141,3 +141,8 @@ Two practices:
 - **Treat the spec as a draft.** When the executor surfaces a contradiction between the spec and reality, that's good. Update the spec, then continue.
 
 A spec that the agent argues with is more valuable than a spec the agent silently ignores.
+
+## See also
+
+- [examples/example-spec.md](../examples/example-spec.md) — a real-shape spec for a single-feature task
+- [03-multi-agent-workflows/plan-execute-judge.md](./plan-execute-judge.md) — the workflow that consumes the spec

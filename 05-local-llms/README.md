@@ -70,3 +70,7 @@ If you've never run a local model and want to:
 4. Use it for a week on real tasks; see what it's good and bad at
 
 This is a few hours of setup. The reflection at the end of the week — "I used local for X tasks, used frontier for Y tasks, and felt the difference at these moments" — is the actual value. Generic benchmarks don't tell you what's relevant for your work.
+
+---
+
+*Snapshot: May 2026. Patterns are durable; specific tool names, model versions, and provider behaviors are point-in-time. See [CHANGELOG](../CHANGELOG.md).*

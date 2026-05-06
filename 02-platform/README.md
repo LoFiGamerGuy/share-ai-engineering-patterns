@@ -60,3 +60,7 @@ For team projects, the math is even more favorable, because every team member's 
 - How to wire up tools (that's [07-tools-and-mcp](../07-tools-and-mcp/))
 
 This section is just about getting the project itself in good shape. Once that's done, everything else gets easier.
+
+---
+
+*Snapshot: May 2026. Patterns are durable; specific tool names, model versions, and provider behaviors are point-in-time. See [CHANGELOG](../CHANGELOG.md).*

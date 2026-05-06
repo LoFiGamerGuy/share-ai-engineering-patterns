@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en" data-register="genkan">
+<head>
+<meta charset="utf-8">
+<title>AI Engineering Patterns — a working catalogue</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/genkan.css">
+<style>
+  .fo-masthead {
+    border-top: 3px solid var(--fg);
+    border-bottom: 1px solid var(--rule);
+    padding: var(--space-5) 0;
+  }
+  .fo-masthead__inner {
+    display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-5);
+  }
+  .fo-masthead__brand {
+    font-family: var(--font-display); font-style: italic; font-weight: 500;
+    font-size: var(--fs-md); color: var(--fg);
+  }
+  .fo-masthead__brand .glyph {
+    font-family: var(--font-mono); font-style: normal; font-size: var(--fs-2xs);
+    letter-spacing: var(--tracking-caps); color: var(--accent);
+    border: 1px solid var(--accent); padding: 2px 6px; margin-right: var(--space-3);
+  }
+  .fo-masthead__meta {
+    font-family: var(--font-mono); font-size: var(--fs-2xs);
+    letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--fg-3);
+  }
+  .fo-masthead__meta b { color: var(--fg); font-weight: 400; }
+
+  .fo-title-block {
+    display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    gap: var(--space-9); align-items: end;
+    padding: var(--space-9) 0 var(--space-8);
+    border-bottom: 1px solid var(--rule);
+  }
+  .fo-title {
+    font-family: var(--font-display); font-weight: 400;
+    font-size: clamp(48px, 7vw, 88px); line-height: 0.98;
+    letter-spacing: -0.025em; color: var(--fg);
+  }
+  .fo-title em { font-style: italic; font-weight: 300; color: var(--accent-deep); }
+  .fo-title-block__lede {
+    font-family: var(--font-display); font-style: italic;
+    font-size: var(--fs-lg); line-height: 1.45; color: var(--fg-2);
+    border-left: 1px solid var(--accent); padding-left: var(--space-5);
+  }
+  @media (max-width: 880px) { .fo-title-block { grid-template-columns: 1fr; } }
+
+  .fo-shelf {
+    padding: var(--space-9) 0 var(--space-7);
+    border-bottom: 1px solid var(--rule);
+  }
+  .fo-shelf__head {
+    display: grid; grid-template-columns: 80px 1fr;
+    gap: var(--space-6); align-items: baseline;
+    margin-bottom: var(--space-6); padding-bottom: var(--space-5);
+    border-bottom: 1px solid var(--fg);
+  }
+  .fo-shelf__num {
+    font-family: var(--font-mono); font-size: var(--fs-2xs);
+    letter-spacing: var(--tracking-caps); text-transform: uppercase;
+    color: var(--accent);
+  }
+  .fo-shelf__title {
+    font-family: var(--font-display); font-weight: 400;
+    font-size: var(--fs-2xl); line-height: 1.05;
+    letter-spacing: var(--tracking-tight); color: var(--fg);
+  }
+  .fo-shelf__title em { font-style: italic; font-weight: 300; color: var(--fg-2); }
+
+  .fo-entry {
+    display: grid;
+    grid-template-columns: 60px minmax(0, 3fr) minmax(0, 5fr) auto;
+    gap: var(--space-6);
+    padding: var(--space-6) 0;
+    border-bottom: 1px solid var(--rule-faint);
+    transition: background var(--dur-fast) var(--ease);
+  }
+  .fo-entry:hover { background: var(--bg-2); }
+  .fo-entry__num {
+    font-family: var(--font-mono); font-size: var(--fs-2xs);
+    letter-spacing: var(--tracking-caps); color: var(--accent);
+  }
+  .fo-entry__title {
+    font-family: var(--font-display); font-style: italic; font-weight: 400;
+    font-size: var(--fs-xl); line-height: 1.15; color: var(--fg);
+    margin-bottom: var(--space-2);
+  }
+  .fo-entry__title a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; }
+  .fo-entry__title a:hover { border-bottom-color: var(--accent); }
+  .fo-entry__bibl {
+    font-family: var(--font-mono); font-size: var(--fs-2xs);
+    letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--fg-3);
+  }
+  .fo-entry__note {
+    font-family: var(--font-body); font-size: var(--fs-sm);
+    line-height: 1.65; color: var(--fg-2);
+    text-wrap: pretty; max-width: 56ch;
+  }
+  .fo-entry__meta {
+    text-align: right; font-family: var(--font-mono); font-size: var(--fs-2xs);
+    letter-spacing: var(--tracking-caps); text-transform: uppercase;
+    color: var(--fg-3); line-height: 1.7;
+  }
+  .fo-entry__meta .tag {
+    border: 1px solid var(--rule); padding: 2px 6px;
+    margin-bottom: var(--space-2); display: inline-block; color: var(--fg-2);
+  }
+  .fo-entry__meta .tag--key { color: var(--accent); border-color: var(--accent); }
+  @media (max-width: 880px) {
+    .fo-entry { grid-template-columns: 40px 1fr; }
+    .fo-entry__note, .fo-entry__meta { grid-column: 2; }
+    .fo-entry__meta { text-align: left; }
+  }
+
+  .fo-feature {
+    background: var(--bg-2); padding: var(--space-8);
+    margin: var(--space-7) 0;
+    border-top: 1px solid var(--accent); border-bottom: 1px solid var(--accent);
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: var(--space-7); align-items: start;
+  }
+  .fo-feature__cap {
+    font-family: var(--font-mono); font-size: var(--fs-2xs);
+    letter-spacing: var(--tracking-caps); text-transform: uppercase;
+    color: var(--accent); margin-bottom: var(--space-4);
+  }
+  .fo-feature__title {
+    font-family: var(--font-display); font-style: italic; font-weight: 400;
+    font-size: var(--fs-3xl); line-height: 0.98;
+    letter-spacing: -0.02em; color: var(--fg);
+    margin-bottom: var(--space-4);
+  }
+  .fo-feature__pull {
+    font-family: var(--font-display); font-style: italic;
+    font-size: var(--fs-lg); line-height: 1.4; color: var(--fg);
+    border-left: 2px solid var(--accent); padding-left: var(--space-5);
+    margin-bottom: var(--space-5);
+  }
+  .fo-feature__note { font-size: var(--fs-sm); line-height: 1.7; color: var(--fg-2); }
+  .fo-feature__note a { color: var(--fg); border-bottom: 1px solid var(--accent); text-decoration: none; }
+  @media (max-width: 880px) { .fo-feature { grid-template-columns: 1fr; padding: var(--space-6); } }
+
+  .fo-shelf__intro {
+    font-family: var(--font-display); font-style: italic;
+    font-size: var(--fs-md); line-height: 1.6; color: var(--fg-2);
+    max-width: 56ch; margin-bottom: var(--space-6);
+  }
+
+  .fo-colophon {
+    border-top: 3px solid var(--fg); padding: var(--space-7) 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-7); margin-top: var(--space-8);
+  }
+  .fo-colophon h5 {
+    font-family: var(--font-mono); font-weight: 400; font-size: var(--fs-2xs);
+    letter-spacing: var(--tracking-caps); text-transform: uppercase;
+    color: var(--accent); margin-bottom: var(--space-3);
+  }
+  .fo-colophon p { font-size: var(--fs-sm); line-height: 1.65; color: var(--fg-2); }
+  .fo-colophon a { color: var(--fg); border-bottom: 1px solid var(--accent); text-decoration: none; }
+  .fo-colophon ul li {
+    font-family: var(--font-mono); font-size: var(--fs-2xs);
+    letter-spacing: var(--tracking-caps); text-transform: uppercase;
+    color: var(--fg-2); line-height: 1.9;
+    border-bottom: 1px dotted var(--rule);
+    padding: 4px 0; display: flex; justify-content: space-between;
+  }
+  .fo-colophon ul li b { color: var(--fg); font-weight: 400; }
+  @media (max-width: 880px) { .fo-colophon { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="gk-shell">
+
+  <header class="gk-container fo-masthead">
+    <div class="fo-masthead__inner">
+      <div class="fo-masthead__brand"><span class="glyph">門</span>AI Engineering Patterns · the catalogue</div>
+      <div class="fo-masthead__meta">
+        <b>Vol. I</b> · <b>No. 01</b> · <b>May 2026</b> · <b>CC BY 4.0</b>
+      </div>
+    </div>
+  </header>
+
+  <main class="gk-container">
+
+    <section class="fo-title-block">
+      <h1 class="fo-title">Patterns <em>for building with agents.</em></h1>
+      <p class="fo-title-block__lede">
+        Seven sections, twenty-six pages. The durable lessons from building agentic systems —
+        how to structure context, when to trust which model, how multiple agents coordinate
+        without falling over, and how to instrument the whole thing so you can tell when it's
+        broken. Nothing here is theoretical.
+      </p>
+    </section>
+
+    <!-- Featured: leaders memo -->
+    <section class="fo-feature">
+      <div>
+        <div class="fo-feature__cap">— for leaders</div>
+        <h2 class="fo-feature__title">A leader's memo.</h2>
+        <p class="fo-feature__pull">"The bottleneck moved from typing to specifying. Most teams have not yet adjusted."</p>
+      </div>
+      <div>
+        <p class="fo-feature__note">A one-page primer for managers, directors, and execs who are not coding day-to-day but need to make decisions about tooling, hiring, and strategy. Five questions to ask your teams. Where the leverage is. Where the risk is. <a href="leaders-memo.html">Read the memo →</a></p>
+        <p class="fo-feature__note" style="margin-top: var(--space-4);">Or read it as <a href="../GUIDE-FOR-LEADERS.md">markdown</a>.</p>
+      </div>
+    </section>
+
+    <!-- The seven shelves -->
+    <section class="fo-shelf">
+      <div class="fo-shelf__head">
+        <div class="fo-shelf__num">— 01</div>
+        <h3 class="fo-shelf__title">Concepts <em>— the vocabulary</em></h3>
+      </div>
+      <p class="fo-shelf__intro">If you've sat in a meeting and people were saying "MCP" and "context window" and you weren't sure exactly what they meant, this is the section that pins the words down.</p>
+      <div class="fo-entry">
+        <div class="fo-entry__num">01.1</div>
+        <div>
+          <div class="fo-entry__title"><a href="../01-concepts/what-is-an-agent.md">What is an Agent</a></div>
+          <div class="fo-entry__bibl">The loop · Tools · Where they fail</div>
+        </div>
+        <div class="fo-entry__note">An LLM running in a loop with tools. Everything sophisticated comes from context, tool design, and guardrails — not the model itself.</div>
+        <div class="fo-entry__meta"><span class="tag tag--key">Start here</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">01.2</div>
+        <div>
+          <div class="fo-entry__title"><a href="../01-concepts/context-and-memory.md">Context and Memory</a></div>
+          <div class="fo-entry__bibl">What an agent "remembers"</div>
+        </div>
+        <div class="fo-entry__note">Context windows, persistent memory, the difference between what's in the prompt and what's stored. Why agents "forget" things.</div>
+        <div class="fo-entry__meta"><span class="tag">Concept</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">01.3</div>
+        <div>
+          <div class="fo-entry__title"><a href="../01-concepts/mcp-explained.md">MCP Explained</a></div>
+          <div class="fo-entry__bibl">The Model Context Protocol</div>
+        </div>
+        <div class="fo-entry__note">USB for agents. A standard way for any agent to plug into any tool. What it is, what it doesn't solve, and why it matters at the platform level.</div>
+        <div class="fo-entry__meta"><span class="tag">Protocol</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">01.4</div>
+        <div>
+          <div class="fo-entry__title"><a href="../01-concepts/trust-and-specs.md">Trust and Specs</a></div>
+          <div class="fo-entry__bibl">Calibration · Centaur model</div>
+        </div>
+        <div class="fo-entry__note">How much autonomy to give agents, where specs sit in the workflow, and why "humans judge, agents build" is the right default.</div>
+        <div class="fo-entry__meta"><span class="tag">Discipline</span></div>
+      </div>
+    </section>
+
+    <section class="fo-shelf">
+      <div class="fo-shelf__head">
+        <div class="fo-shelf__num">— 02</div>
+        <h3 class="fo-shelf__title">Platform <em>— the boring infrastructure that makes agents productive</em></h3>
+      </div>
+      <p class="fo-shelf__intro">Setting up a project so agents can be productive in it. Teams that skip this end up with agents that flail — they don't know how to run tests, find the build script, or follow conventions.</p>
+      <div class="fo-entry">
+        <div class="fo-entry__num">02</div>
+        <div>
+          <div class="fo-entry__title"><a href="../02-platform/">Platform — the four pages</a></div>
+          <div class="fo-entry__bibl">Overview · Spine · Dev env · Project template</div>
+        </div>
+        <div class="fo-entry__note">The agentic spine, dev environment patterns, project scaffolding. The infrastructure layer that compounds value across every agent run.</div>
+        <div class="fo-entry__meta"><span class="tag tag--key">High leverage</span></div>
+      </div>
+    </section>
+
+    <section class="fo-shelf">
+      <div class="fo-shelf__head">
+        <div class="fo-shelf__num">— 03</div>
+        <h3 class="fo-shelf__title">Multi-agent workflows <em>— where the real leverage lives</em></h3>
+      </div>
+      <p class="fo-shelf__intro">Single agents have structural limits — no internal critic, single perspective, sequential thinking. Multi-agent workflows close all three. The single highest-leverage move in agentic engineering.</p>
+      <div class="fo-entry">
+        <div class="fo-entry__num">03</div>
+        <div>
+          <div class="fo-entry__title"><a href="../03-multi-agent-workflows/">Multi-agent workflows — the seven pages</a></div>
+          <div class="fo-entry__bibl">Plan/execute/judge · Council · Multi-LLM review · Spec-driven · Handoff · Failure modes</div>
+        </div>
+        <div class="fo-entry__note">Pattern catalogue for coordinating multiple agents. Plan/execute/judge is the default; the others compose with it.</div>
+        <div class="fo-entry__meta"><span class="tag tag--key">Highest leverage</span></div>
+      </div>
+    </section>
+
+    <section class="fo-shelf">
+      <div class="fo-shelf__head">
+        <div class="fo-shelf__num">— 04</div>
+        <h3 class="fo-shelf__title">Automation <em>— letting agents run unattended</em></h3>
+      </div>
+      <p class="fo-shelf__intro">Where you have to think hard about trust and blast radius. Levels of autonomy, sandboxing, overnight runs, and the failure modes of leaving agents on by themselves.</p>
+      <div class="fo-entry">
+        <div class="fo-entry__num">04</div>
+        <div>
+          <div class="fo-entry__title"><a href="../04-automation/">Automation — the four pages</a></div>
+          <div class="fo-entry__bibl">Control levels · Sandboxes · Overnight runs</div>
+        </div>
+        <div class="fo-entry__note">Five levels of autonomy from "always asks" to "fully unattended in CI". Sandbox patterns. Overnight loop discipline. Cost ceilings as guardrails.</div>
+        <div class="fo-entry__meta"><span class="tag">Operations</span></div>
+      </div>
+    </section>
+
+    <section class="fo-shelf">
+      <div class="fo-shelf__head">
+        <div class="fo-shelf__num">— 05</div>
+        <h3 class="fo-shelf__title">Local LLMs <em>— when running models on your own hardware makes sense</em></h3>
+      </div>
+      <p class="fo-shelf__intro">The capability gap between local and frontier is real, and shrinking, but not closed. When local is the right call, when it isn't, and how to evaluate which models actually work for your tasks.</p>
+      <div class="fo-entry">
+        <div class="fo-entry__num">05</div>
+        <div>
+          <div class="fo-entry__title"><a href="../05-local-llms/">Local LLMs — the three pages</a></div>
+          <div class="fo-entry__bibl">Selection · Benchmarking · When to use</div>
+        </div>
+        <div class="fo-entry__note">Privacy-sensitive work, very high-volume tasks, experimentation. The criteria for choosing local over hosted, and the benchmarks that actually predict task performance.</div>
+        <div class="fo-entry__meta"><span class="tag">Capability</span></div>
+      </div>
+    </section>
+
+    <section class="fo-shelf">
+      <div class="fo-shelf__head">
+        <div class="fo-shelf__num">— 06</div>
+        <h3 class="fo-shelf__title">Token efficiency <em>— controlling cost and latency without sacrificing quality</em></h3>
+      </div>
+      <p class="fo-shelf__intro">A 5–10x cost reduction is achievable with no quality loss if you apply prompt caching, model tiering, and context discipline correctly. Most teams capture none of it.</p>
+      <div class="fo-entry">
+        <div class="fo-entry__num">06</div>
+        <div>
+          <div class="fo-entry__title"><a href="../06-token-efficiency/">Token efficiency — the four pages</a></div>
+          <div class="fo-entry__bibl">Tiering · Caching · Context · Cost</div>
+        </div>
+        <div class="fo-entry__note">Routing work to the right model. Prompt caching for stable prefixes. Three-layer context management. How to estimate, monitor, and forecast the bill.</div>
+        <div class="fo-entry__meta"><span class="tag tag--key">Save 5-10x</span></div>
+      </div>
+    </section>
+
+    <section class="fo-shelf">
+      <div class="fo-shelf__head">
+        <div class="fo-shelf__num">— 07</div>
+        <h3 class="fo-shelf__title">Tools and MCP <em>— the plumbing</em></h3>
+      </div>
+      <p class="fo-shelf__intro">Tool design is where most agentic workflows succeed or fail. The model is downstream of the tools you give it. Hooks add guardrails the model can't forget. Skills package recurring expertise.</p>
+      <div class="fo-entry">
+        <div class="fo-entry__num">07</div>
+        <div>
+          <div class="fo-entry__title"><a href="../07-tools-and-mcp/">Tools and MCP — the four pages</a></div>
+          <div class="fo-entry__bibl">MCP server patterns · Hooks · Skills · Observability</div>
+        </div>
+        <div class="fo-entry__note">How to design tools agents actually use. Event-driven harness automation. Discoverable skills. The instrumentation that makes the whole thing legible.</div>
+        <div class="fo-entry__meta"><span class="tag">Foundations</span></div>
+      </div>
+    </section>
+
+    <footer class="fo-colophon">
+      <div>
+        <h5>About</h5>
+        <p>Written by Ryan Gosnell. A practitioner's reference for engineers and engineering leaders working with agentic AI. Every pattern came from running into the failure mode and figuring out the way around it.</p>
+        <p style="margin-top: var(--space-3);">Source on GitHub. <a href="../README.md">Repo README →</a></p>
+      </div>
+      <div>
+        <h5>License</h5>
+        <p><a href="../LICENSE">CC BY 4.0</a> — share, adapt, build on; just credit the source.</p>
+      </div>
+      <div>
+        <h5>Quick links</h5>
+        <ul>
+          <li><a href="leaders-memo.html">Leader's memo</a> <b>HTML</b></li>
+          <li><a href="../GUIDE-FOR-LEADERS.md">Leader's guide</a> <b>MD</b></li>
+          <li><a href="../README.md">Repo README</a> <b>MD</b></li>
+          <li><a href="../CHANGELOG.md">Changelog</a> <b>MD</b></li>
+          <li><a href="../examples/">Examples</a> <b>DIR</b></li>
+        </ul>
+      </div>
+    </footer>
+
+  </main>
+
+</div>
+
+</body>
+</html>

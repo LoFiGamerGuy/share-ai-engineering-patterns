@@ -66,3 +66,7 @@ If you've never run multi-agent: start with [plan-execute-judge.md](./plan-execu
 After that: [multi-llm-review.md](./multi-llm-review.md) for important changes, [agent-council.md](./agent-council.md) for design decisions you're stuck on.
 
 Always: [spec-driven.md](./spec-driven.md). Specs are the connective tissue.
+
+---
+
+*Snapshot: May 2026. Patterns are durable; specific tool names, model versions, and provider behaviors are point-in-time. See [CHANGELOG](../CHANGELOG.md).*

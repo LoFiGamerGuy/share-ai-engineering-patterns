@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AI Engineering — A leader's memo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/base.css">
+<style>
+  .memo { max-width: 760px; margin: 0 auto; padding: var(--space-9) var(--space-6); }
+  .memo__head {
+    border-top: 3px solid var(--sumi);
+    border-bottom: 1px solid var(--sumi);
+    padding: var(--space-5) 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-2) var(--space-5);
+    margin-bottom: var(--space-7);
+  }
+  .memo__head dt {
+    font-family: var(--font-mono); font-size: var(--fs-2xs);
+    text-transform: uppercase; letter-spacing: var(--tracking-caps); color: var(--fg-3);
+  }
+  .memo__head dd { font-size: var(--fs-sm); color: var(--fg); }
+  .memo__head dd strong { font-weight: 600; }
+  .memo__title {
+    font-family: var(--font-display); font-size: var(--fs-2xl); line-height: 1.15;
+    font-weight: 400; font-style: italic; letter-spacing: -0.015em;
+    margin-bottom: var(--space-7);
+  }
+  .tldr {
+    background: var(--bone-2);
+    border-left: 2px solid var(--copper);
+    padding: var(--space-5);
+    margin-bottom: var(--space-7);
+  }
+  .tldr__label {
+    font-family: var(--font-mono); font-size: var(--fs-2xs);
+    text-transform: uppercase; letter-spacing: var(--tracking-caps);
+    color: var(--copper); margin-bottom: var(--space-3);
+  }
+  .tldr p { font-family: var(--font-display); font-style: italic; font-weight: 400; font-size: var(--fs-md); line-height: 1.5; color: var(--fg); }
+  .memo h2 {
+    font-family: var(--font-mono); font-size: var(--fs-xs); font-weight: 400;
+    text-transform: uppercase; letter-spacing: var(--tracking-caps); color: var(--fg);
+    margin-top: var(--space-7); margin-bottom: var(--space-3);
+    padding-bottom: var(--space-2); border-bottom: 1px solid var(--rule);
+  }
+  .memo h2 .num { color: var(--copper); margin-right: var(--space-3); }
+  .memo p { font-size: var(--fs-base); line-height: 1.65; color: var(--fg); margin-bottom: var(--space-3); }
+  .memo ul li {
+    font-size: var(--fs-base); line-height: 1.55;
+    padding: 6px 0 6px 24px; position: relative;
+  }
+  .memo ul li::before {
+    content: "—"; position: absolute; left: 0;
+    color: var(--copper); font-family: var(--font-mono);
+  }
+  .memo strong { font-weight: 600; }
+  .memo em { font-style: italic; }
+  .memo a { color: var(--fg); border-bottom: 1px solid var(--copper); text-decoration: none; }
+  .memo a:hover { color: var(--copper); }
+  .signature { margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid var(--sumi); }
+  .signature__name { font-family: var(--font-display); font-style: italic; font-size: var(--fs-lg); color: var(--fg); }
+  .signature__title { font-family: var(--font-mono); font-size: var(--fs-2xs); text-transform: uppercase; letter-spacing: var(--tracking-caps); color: var(--fg-3); margin-top: var(--space-1); }
+</style>
+</head>
+<body>
+
+<article class="memo">
+
+  <header class="masthead">
+    <div class="masthead__brand">A memorandum <span style="font-style: normal; color: var(--fg-3);">— for engineering leaders</span></div>
+    <div class="masthead__meta">No. 01 · For circulation</div>
+  </header>
+
+  <dl class="memo__head">
+    <dt>To</dt>      <dd><strong>Engineering leaders</strong></dd>
+    <dt>From</dt>    <dd>Ryan Gosnell</dd>
+    <dt>Date</dt>    <dd>5 May 2026</dd>
+    <dt>Re</dt>      <dd><strong>How AI is actually being used for engineering work — and what to ask your teams</strong></dd>
+  </dl>
+
+  <h1 class="memo__title">The bottleneck moved from typing to specifying. Most teams have not yet adjusted.</h1>
+
+  <div class="tldr">
+    <div class="tldr__label">tl;dr</div>
+    <p>AI in engineering used to mean autocomplete. Today it means agents — LLMs running in loops with tools — that implement entire tasks against written specs. The teams capturing real leverage are the ones investing in spec discipline, multi-agent workflows, and platform-layer infrastructure. The teams that aren't are leaving most of the value on the table while paying for the same tooling.</p>
+  </div>
+
+  <h2><span class="num">01</span>The shift</h2>
+  <p>Three years ago, AI in engineering meant a developer typed code and the IDE suggested the next few lines. Useful, but the human drove every keystroke.</p>
+  <p>Today the work pattern is different. A developer writes a description of what they want — a paragraph, a checklist, a spec — and an agent does the implementation. The developer reviews the result, adjusts the spec, runs again. The unit of work moved from <em>lines of code</em> to <em>tasks</em>. Engineers getting the most leverage are the ones who got good at writing precise specs and reviewing AI-generated work efficiently. Engineers still using AI as autocomplete are leaving most of the value on the table.</p>
+
+  <h2><span class="num">02</span>What an "agent" actually is</h2>
+  <p>An agent is an LLM running in a loop with access to tools. It reads the task, decides what to do, calls a tool (read a file, run a command, post a comment), reads the result, and decides the next step. It repeats until the task is done or it gets stuck. Everything sophisticated comes from how the context is structured, which tools are available, and what guardrails exist on the loop.</p>
+
+  <h2><span class="num">03</span>Where the leverage is</h2>
+  <p>Two moves dominate. First: <strong>multi-agent review workflows</strong>. One agent drafts, a second agent critiques, a third agent reconciles. This catches errors that no single-agent setup catches and parallelizes well. Second: <strong>investing in the platform layer</strong>. A well-structured repo with clear context files, working scripts, and known conventions is one where any agent can be productive immediately. A messy repo is one where every agent run starts from zero.</p>
+
+  <h2><span class="num">04</span>Where the risk is</h2>
+  <ul>
+    <li><strong>Trust drift.</strong> Teams that start by reviewing every line slowly stop. The quality is high enough that careful review feels redundant. It isn't. Set explicit norms about what gets reviewed and stick to them.</li>
+    <li><strong>Cost surprises.</strong> Without monitoring, costs can 10x in a week when someone leaves a long-running loop unattended. Monthly budget alerts are the minimum.</li>
+    <li><strong>Skill atrophy.</strong> Junior engineers who only ever direct agents may not develop the deep mechanical skill that makes them <em>good</em> at directing agents. Think about how juniors get reps on the actual mechanics, not just on supervision.</li>
+    <li><strong>Context staleness.</strong> Agents work off context files. Those files rot. A team that hasn't updated its context file in three months is a team whose agents are working off bad assumptions.</li>
+  </ul>
+
+  <h2><span class="num">05</span>Five questions to ask your teams</h2>
+  <p>Not "how much AI are you using" — that question doesn't reveal anything. Instead:</p>
+  <ul>
+    <li><strong>What's your spec workflow?</strong> "I just type questions into chat" is early. "I write a markdown file, dispatch an agent against it, then review the diff" is the modern pattern.</li>
+    <li><strong>Are you using multiple agents or just one?</strong> Single-agent is fine for small tasks. Multi-agent (plan/execute/judge, council, multi-LLM review) is where leverage lives for non-trivial work.</li>
+    <li><strong>What's your trust calibration?</strong> Where on the spectrum from "reviews every line" to "lets it run overnight in a sandbox" does your team operate, and why?</li>
+    <li><strong>What does it cost?</strong> A rough monthly per-developer number. If they have no idea, they're either over-spending or under-using.</li>
+    <li><strong>What broke recently?</strong> Every team running serious agentic workflows has stories about an agent doing something dumb. Teams that don't have these stories aren't pushing hard enough. Teams that have <em>too many</em> aren't using guardrails.</li>
+  </ul>
+
+  <h2><span class="num">06</span>Recommendation</h2>
+  <p>Start by reading the seven section overviews in the companion repo (about an hour, end to end). Then pick one of two starting moves: introduce a multi-agent review workflow on a real project (<a href="../03-multi-agent-workflows/">section 03</a>), or invest in the platform layer for an existing repo (<a href="../02-platform/">section 02</a>). Either compounds. Both is better.</p>
+
+  <div class="aside" style="border-color: var(--copper);">
+    <div class="aside__label" style="color: var(--copper);">For the skeptics</div>
+    <p>The patterns here are not theoretical. Each one came out of running into the failure mode and figuring out the way around it. The repo is openly licensed (CC BY 4.0) and meant to be shared and adapted.</p>
+  </div>
+
+  <div class="signature">
+    <div class="signature__name">Ryan Gosnell</div>
+    <div class="signature__title">
+      <a href="mailto:gosnerp@gmail.com">gosnerp@gmail.com</a> ·
+      <a href="mailto:ryan.gosnell@ga-i3.com">ryan.gosnell@ga-i3.com</a> ·
+      <a href="https://www.linkedin.com/in/ryan-gosnell-39504331/">LinkedIn</a>
+    </div>
+    <div class="signature__title" style="margin-top: var(--space-2);">Author · AI Engineering Patterns · CC BY 4.0</div>
+  </div>
+
+  <footer class="colophon">
+    <span>A leader's memo · Folio · Soul Register</span>
+    <span><a href="../README.md">↩ back to repo</a> · May 2026</span>
+  </footer>
+
+</article>
+
+</body>
+</html>

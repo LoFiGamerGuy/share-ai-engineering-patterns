@@ -24,7 +24,7 @@ This repo collects the durable lessons from building agentic systems: how to str
 
 ## How to read this
 
-Each section has its own `overview.md`. If you're orienting, read the seven overviews — that's roughly an hour and gives you the full landscape. Then drill into specific files based on what you're trying to do.
+Each section has its own `README.md` that orients you. If you're getting the lay of the land, read the seven section overviews — that's roughly an hour and gives you the full landscape. Then drill into specific files based on what you're trying to do.
 
 Nothing here is theoretical. Every pattern came from running into the failure mode and figuring out the way around it.
 
@@ -35,6 +35,25 @@ Nothing here is theoretical. Every pattern came from running into the failure mo
 - "Spec" means a written description of the work that's specific enough for a different agent (or a different person) to pick up and execute.
 - Code samples use shell, Python, or TypeScript depending on what's idiomatic for that pattern. They're illustrative — not copy-paste-ready.
 
+## Examples
+
+Concrete artifacts that show what the patterns look like as files: a real-shape spec, a project CLAUDE.md, and a full plan/execute/judge prompt set. See [examples/](./examples/).
+
+## Rendered version
+
+For a polished, hand-around version, the [`rendered/`](./rendered/) folder contains:
+
+- [`rendered/index.html`](./rendered/index.html) — the catalogue / front door for the seven sections
+- [`rendered/leaders-memo.html`](./rendered/leaders-memo.html) — the leaders guide as a one-page memo
+
+Open either file in a browser locally, or host the `rendered/` folder via GitHub Pages or any static host.
+
 ## Caveat
 
-The patterns here reflect the state of the tools as of writing. Models, harnesses, and protocols are moving fast. Treat the *pattern* as durable; treat the specific tool names and flags as snapshots.
+The patterns here reflect the state of the tools as of writing (May 2026). Models, harnesses, and protocols are moving fast. Treat the *pattern* as durable; treat the specific tool names and flags as snapshots. See [CHANGELOG.md](./CHANGELOG.md) for the version history.
+
+## Author and license
+
+Written by **Ryan Gosnell**. Licensed under [CC BY 4.0](./LICENSE) — share, adapt, build on; just credit the source.
+
+If you find errors, have suggestions, or want to add patterns from your own work, contributions are welcome. The repo is meant to grow.

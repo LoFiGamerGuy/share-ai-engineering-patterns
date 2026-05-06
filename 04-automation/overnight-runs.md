@@ -138,3 +138,9 @@ For tasks that take 30 minutes interactively, overnight is rarely worth the setu
 - You can verify the result faster than you could have done the work
 
 Below that threshold, just do it interactively. Above that threshold, set up properly and let it cook.
+
+## See also
+
+- [06-token-efficiency/cost-estimation.md](../06-token-efficiency/cost-estimation.md) — the budget caps that protect against runaway loops
+- [04-automation/sandbox-environments.md](./sandbox-environments.md) — where overnight runs should actually live
+- [07-tools-and-mcp/observability.md](../07-tools-and-mcp/observability.md) — what to capture so the morning review is fast

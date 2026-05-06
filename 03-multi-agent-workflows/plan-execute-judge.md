@@ -127,3 +127,9 @@ If you want to start with the simplest possible plan/execute/judge:
 4. If the critique flags something real, instruct the fix
 
 That's it. Adding actual sub-agents and orchestration improves quality, but even the same-agent-three-passes version produces noticeably better results than direct execution.
+
+## See also
+
+- [examples/example-plan-execute-judge.md](../examples/example-plan-execute-judge.md) — three example prompts, one per role
+- [03-multi-agent-workflows/spec-driven.md](./spec-driven.md) — specs are the contract these roles communicate through
+- [06-token-efficiency/model-tiering.md](../06-token-efficiency/model-tiering.md) — route the executor to a cheaper model than the planner/judge

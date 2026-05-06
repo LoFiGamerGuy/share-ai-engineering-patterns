@@ -67,8 +67,12 @@ The second highest-leverage move: **investing in the platform layer** ([02-platf
 
 ## What to read next
 
-If you have 30 minutes: read the seven `overview.md` files, one per section.
+If you have 30 minutes: read the seven section `README.md` files, one per section.
 
-If you have 5 minutes: read [01-concepts/what-is-an-agent.md](./01-concepts/what-is-an-agent.md) and [03-multi-agent-workflows/overview.md](./03-multi-agent-workflows/overview.md). Those two together give you a working model of what's happening.
+If you have 5 minutes: read [01-concepts/what-is-an-agent.md](./01-concepts/what-is-an-agent.md) and [03-multi-agent-workflows/README.md](./03-multi-agent-workflows/README.md). Those two together give you a working model of what's happening.
 
 If you want to understand cost: [06-token-efficiency/cost-estimation.md](./06-token-efficiency/cost-estimation.md).
+
+---
+
+*Snapshot: May 2026. Patterns are durable; specific tool names, model versions, and provider behaviors are point-in-time. See [CHANGELOG](./CHANGELOG.md).*

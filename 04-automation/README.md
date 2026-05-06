@@ -80,3 +80,7 @@ Start with [autonomous-control-levels.md](./autonomous-control-levels.md) — th
 Then [sandbox-environments.md](./sandbox-environments.md) — how to constrain blast radius.
 
 Then [overnight-runs.md](./overnight-runs.md) — the practical patterns for unattended operation.
+
+---
+
+*Snapshot: May 2026. Patterns are durable; specific tool names, model versions, and provider behaviors are point-in-time. See [CHANGELOG](../CHANGELOG.md).*
