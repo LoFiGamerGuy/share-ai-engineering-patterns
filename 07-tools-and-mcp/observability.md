@@ -120,6 +120,11 @@ Three rules:
 2. **Redact known PII patterns** at trace-write time, not after. Easier than retroactive cleanup.
 3. **Don't ship traces to third-party services without thinking.** "Send everything to vendor X for analysis" is a data-exposure decision, not just a tooling decision.
 
+> **War story — audit scripts compound.**
+> While reorganizing this very repo, a one-off "let me just check for broken links" script written in ~30 lines of Python (walk every `.md` and `.html`, parse links, verify each target exists) immediately caught a real bug: a doc had been split into two files, but the cross-reference from another section still pointed at the old combined name. Without the audit, the broken link would have shipped — neither I nor the agent would have caught it manually across 165 cross-references.
+>
+> The script then got run after every subsequent section addition. Five reorganizations later it had caught two more breakages, each from "obvious" edits that introduced subtle issues. Total time invested: 10 minutes to write the script, 30 seconds per run to execute. Total breakage prevented: every silently-broken link that would have eroded reader trust on the published site. Observability scripts written for *one* problem usually pay back across many.
+
 ## The long view
 
 Most teams under-instrument early and regret it. The cost of adding observability later — re-running sessions, reconstructing decisions from incomplete data, debating what happened — is much higher than the cost of capturing it from day one.

@@ -4,15 +4,17 @@ An **agent** is an LLM running in a loop with access to tools. That's the whole 
 
 ## The loop
 
+```mermaid
+flowchart LR
+    A[Read context<br/>task + prior steps] --> B{Decide<br/>next action}
+    B -->|Call a tool| C[Execute action]
+    C --> D[Observe result]
+    D --> A
+    B -->|Task done| E([Exit])
+    D -->|Stuck| E
 ```
-loop:
-    1. Read context (task, prior steps, tool results)
-    2. Decide next action (call a tool, write code, ask a question, finish)
-    3. Execute the action
-    4. Observe the result
-    5. If task is done -> exit
-    6. Otherwise -> repeat
-```
+
+In words: read context → decide → execute → observe → repeat until done or stuck.
 
 A single LLM completion is not an agent. A chatbot that answers questions is not an agent. The thing that makes it an agent is step 3 — the LLM decides to do something in the world, the world responds, and the LLM reads the response and continues.
 
@@ -58,6 +60,11 @@ This last property is the core leverage. An agent that runs its own tests catche
 - **Drift from the task.** Long conversations accumulate context that pulls the agent off-track. See [context-and-memory.md](./context-and-memory.md).
 - **Overconfidence at boundaries.** The agent doesn't know where its knowledge ends. It will confidently misuse an unfamiliar API. Specs and tests pin this down. See [trust-and-specs.md](./trust-and-specs.md).
 - **Cost runaway.** A loop that doesn't terminate is a billing problem. Hard step limits and budget caps are non-negotiable.
+
+> **War story — when "generic" isn't.**
+> While building a cross-project synthesis from a personal reference library, I assembled what was supposed to be a *generic* agent-patterns distillation by reading book INSIGHTS and pulling out the durable lessons. Months later, when the document was reused for unrelated work, the new context immediately surfaced what I'd missed: the "generic" doc was riddled with implicit references to the original project — "X recommendation:", "Y mapping:", framing assumptions baked into examples. The model picked up the project's vocabulary as if it were universal.
+>
+> The lesson: agent-authored content carries the context of the session it was authored in, even when you ask for it to be generic. If a doc is supposed to be portable, you have to *strip and re-read it from a fresh session* with no shared context — that's the only way to find the assumptions you embedded without noticing.
 
 ## How agents differ from each other
 

@@ -14,6 +14,26 @@ Context management operates at three layers, each with different tradeoffs:
 
 These compose. A well-managed agent uses all three.
 
+```mermaid
+flowchart TB
+    subgraph Prompt[The prompt sent to the model]
+        direction TB
+        Cache[Layer 1: Cached prefix<br/>system prompt + tools + conventions<br/>pinned, rarely changes]
+        Hist[Layer 2: Compacted history<br/>recent decisions + state<br/>old turns summarized away]
+        Retrieved[Layer 3: Retrieved slice<br/>relevant files / chunks<br/>loaded only for this task]
+        Now[Current turn<br/>task + latest tool result]
+    end
+
+    Cache --> Hist --> Retrieved --> Now
+
+    style Cache fill:#dbeafe
+    style Hist fill:#fef3c7
+    style Retrieved fill:#dcfce7
+    style Now fill:#fee2e2
+```
+
+Stable content first (cacheable). Variable content last (changes per turn). The variable parts pay full price; the stable parts ride the cache.
+
 ## Layer 1: prompt caching
 
 The first move. Put stable content first; let it cache. Already covered — see [prompt-caching.md](./prompt-caching.md).
@@ -82,6 +102,11 @@ A bloated working set produces three failures:
 1. **Higher cost** (paying for tokens not driving decisions)
 2. **Slower responses** (more tokens to process)
 3. **Worse decisions** (model attention spread across irrelevant content; key signals lost in noise)
+
+> **War story — most of a book is not load-bearing.**
+> A bash cookbook in the reference library is ~26,000 lines long. The synthesis distilled from it — covering the security-first script template, parameter expansion, argument handling, error trapping, and the rest of the genuinely-useful patterns — came in at ~280 lines. That's a 100× compression. The other 99% wasn't *wrong*; it was reference material, alternate phrasings, edge cases, examples of patterns the synthesis already covered once.
+>
+> The implication for context management: when you're tempted to load a "complete" reference into agent context, ask whether you actually need the 26,000-line version or whether the 280-line distillation would do the same job. Almost always, the distillation is enough — and the cost difference is staggering. Build the distillations *once*, then load *those* on every session.
 
 ## Common anti-patterns
 

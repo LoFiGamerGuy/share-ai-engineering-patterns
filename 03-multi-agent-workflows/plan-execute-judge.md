@@ -10,6 +10,20 @@ The workhorse pattern. Three roles, three agent runs (or three agent passes), on
 
 If the judge rejects, you either loop (back to executor with the notes) or escalate (back to planner if the plan was the problem).
 
+```mermaid
+flowchart LR
+    Spec([Spec / task]) --> Planner[Planner<br/>frontier model]
+    Planner --> Plan[Plan.md]
+    Plan --> Executor[Executor<br/>mid-tier model]
+    Executor --> Diff[Diff + summary]
+    Diff --> Judge[Judge<br/>frontier model]
+    Judge -->|Approve| Done([Ship])
+    Judge -->|Reject:<br/>execution gap| Executor
+    Judge -->|Reject:<br/>plan was wrong| Planner
+```
+
+The arrows that loop back are the entire reason this pattern works. A single agent has no equivalent.
+
 ## Why this works
 
 The planner and executor are doing different cognitive work. Planning is high-level reasoning: what to change, in what order, what to be careful of. Execution is mechanical: read the file, write the change, run the test.
@@ -64,6 +78,11 @@ Risks:
 Sends back: "Add a test that verifies internal routes are unaffected by the rate limit."
 
 Executor adds the test. Judge re-reviews. Approves.
+
+> **War story — pipeline patterns scale; single-pass doesn't.**
+> Faced with a personal technical library of ~150 books and the desire for queryable knowledge from it, the first instinct was a single agent prompt: "read this book and tell me what's important." That worked for 3 books and then collapsed. The output was inconsistent (different framing per book), shallow (the model rushed past structural insights), and uncomparable (no two distillations had the same shape).
+>
+> The pipeline that actually worked was plan/execute/judge applied to reading: one focused agent pass extracts INSIGHTS per book against a fixed schema (the "executor"); a separate pass synthesizes across books on a single topic (the "planner+judge" combined); a third pass scrubs project-specific contamination from any synthesis intended to be portable. Three narrow agents beat one broad one — same model, dramatically better output, consistent across the corpus.
 
 ## How to implement it
 

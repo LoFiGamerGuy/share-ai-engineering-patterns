@@ -20,6 +20,25 @@ A framework for thinking about how much autonomy to give an agent. The levels ar
 
 **Level 7 — Fully autonomous.** No human review at all. Used when: production-grade pipeline with strong automated verification (tests, canary deploys, monitoring) catching errors. Rare for engineering work; more common for narrow tasks like dependency updates.
 
+```mermaid
+flowchart LR
+    L0[L0<br/>Suggest only] --> L1[L1<br/>Approve each<br/>tool call]
+    L1 --> L2[L2<br/>Approve<br/>destructive only]
+    L2 --> L3[L3<br/>Approve commits<br/>+ outbound]
+    L3 --> L4[L4<br/>Sandbox<br/>run-to-completion]
+    L4 --> L5[L5<br/>Auto-commit<br/>review after]
+    L5 --> L6[L6<br/>Sampling only]
+    L6 --> L7[L7<br/>Fully autonomous]
+
+    style L0 fill:#fee
+    style L2 fill:#fef3c7
+    style L3 fill:#fef3c7
+    style L4 fill:#dcfce7
+    style L7 fill:#bae6fd
+```
+
+Most teams settle at L2-L3 for interactive work and L4-L5 for batch automation. L6-L7 are rare and earned.
+
 ## Picking a level
 
 Three factors:
@@ -60,6 +79,11 @@ A high level in a small sandbox can be safer than a low level on a permissive ho
 **Continuous improvement pattern.** Level 5-6 in a sandbox, scoped to one repo. Agent watches for opportunities, opens PRs. You review at PR-level cadence, not action-level. Trust is high for the specific task type; stakes are bounded by PR review; verification is the existing PR process.
 
 **Autonomous CI pattern.** Level 6-7 for narrow tasks like dependency updates, security patches, automated formatting. Trust is high (because the task is narrow). Stakes are bounded. Verification is automated tests and humans reviewing PRs.
+
+> **War story — per-task budgets are not optional at scale.**
+> A reference-library extraction job — running L4 (sandbox, run-to-completion, review after) over ~150 technical books, some 20,000+ lines long — ran exactly the way it was supposed to right up until one book sent the extractor into a context-explosion loop. The book had unusual chapter formatting; the extractor didn't recognize a chapter boundary; it kept "reading more to clarify"; one book burned what would have been a quarter of the entire run's budget before the per-task ceiling killed it.
+>
+> The fix wasn't a smarter extractor. The fix was: a hard per-task token budget (sized to the *median* book, not the largest), a per-task time ceiling, and a cost-tagging scheme that let the next morning's review immediately flag which book had been the outlier so its INSIGHTS could be regenerated under a tighter prompt. The budget caught the runaway. Without it, one weird book would have eaten the whole run.
 
 ## Approval fatigue
 

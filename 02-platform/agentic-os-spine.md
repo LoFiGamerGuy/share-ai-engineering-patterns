@@ -19,6 +19,25 @@ A consistent set of files at known paths, with known purposes:
 
 Every project has the same shape. Every agent run starts by reading the same files. Every team member knows where to look.
 
+```mermaid
+flowchart TB
+    Root[Project Root]
+    Root --> Context[Context layer]
+    Root --> Tasks[Task layer]
+    Root --> Ops[Operations layer]
+
+    Context --> CMD[CLAUDE.md / AGENTS.md<br/>conventions, gotchas, the why]
+    Context --> README[README.md<br/>human-facing intro]
+    Context --> MCP[.mcp.json<br/>tool configuration]
+
+    Tasks --> Specs[specs/<br/>written task descriptions]
+    Tasks --> Docs[docs/<br/>long-form documentation]
+
+    Ops --> Make[Makefile / justfile<br/>standard entry points]
+    Ops --> Env[.env.example<br/>required vars]
+    Ops --> Scripts[scripts/<br/>operational scripts]
+```
+
 ## Why "spine"
 
 The metaphor: it's the thing every agent run hangs off of. If the spine is healthy, the rest of the project's body works. If the spine is misaligned, everything else is awkward and slow.

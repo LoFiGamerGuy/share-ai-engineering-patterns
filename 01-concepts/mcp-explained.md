@@ -16,8 +16,11 @@ An MCP **client** (the agent harness) connects to the server, asks "what do you 
 
 When the LLM decides to use a tool, the client forwards the call to the server, receives the result, and feeds it back into the conversation.
 
-```
-[ LLM ] <-- tool calls --> [ Agent harness / MCP client ] <-- protocol --> [ MCP server ] <-- API/file/db --> [ Real system ]
+```mermaid
+flowchart LR
+    LLM[LLM] <-->|tool calls| Client[Agent harness<br/>MCP client]
+    Client <-->|protocol<br/>JSON-RPC over<br/>stdio or HTTP| Server[MCP server]
+    Server <-->|API / file / db| System[Real system]
 ```
 
 The protocol is the standardized middle. Everything else is implementation choice.
