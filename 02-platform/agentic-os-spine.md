@@ -121,7 +121,7 @@ Some agent harnesses support hooks (callbacks that fire on certain events) and s
   commands/      # Custom slash commands
 ```
 
-These are harness-specific. Keep them in a clearly-named directory and document what they do in `CLAUDE.md`. See [07-tools-and-mcp/hooks-and-skills.md](../07-tools-and-mcp/hooks-and-skills.md).
+These are harness-specific. Keep them in a clearly-named directory and document what they do in `CLAUDE.md`. See [07-tools-and-mcp/hooks.md](../07-tools-and-mcp/hooks.md) and [07-tools-and-mcp/skills.md](../07-tools-and-mcp/skills.md).
 
 ## Drift and decay
 
