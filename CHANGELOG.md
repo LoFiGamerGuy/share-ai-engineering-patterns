@@ -2,6 +2,12 @@
 
 All notable changes to this repo. The patterns themselves are durable; specific tool names, flags, and provider behaviors are snapshots and may drift over time.
 
+## [0.3.0] — 2026-05-05
+
+### Added
+- Section 08 — Resources: dev environment patterns, recommended reading list (curated from a ~150-book reference library), and honest tool evaluations (agent harnesses, multi-agent frameworks, local LLM runtimes, token-saving utilities)
+- README and leaders guide updated to reference the new section
+
 ## [0.2.0] — 2026-05-05
 
 ### Added

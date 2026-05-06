@@ -42,6 +42,8 @@ The repo this guide lives in describes seven categories of patterns. The short v
 
 **Tools and MCP.** The plumbing that lets agents reach beyond text into your actual systems — your codebase, your databases, your ticketing system, your monitoring. MCP is the open protocol for this. See [07-tools-and-mcp](./07-tools-and-mcp/).
 
+**Resources.** Dev environment patterns, a curated reading list, and honest tool evaluations — what to set up, what to read, which framework or harness to commit to. The supporting material that turns the patterns into a practice. See [08-resources](./08-resources/).
+
 ## Questions to ask your teams
 
 Not "how much AI are you using" — that question doesn't reveal anything. Instead:
@@ -67,7 +69,7 @@ The second highest-leverage move: **investing in the platform layer** ([02-platf
 
 ## What to read next
 
-If you have 30 minutes: read the seven section `README.md` files, one per section.
+If you have 30 minutes: read the eight section `README.md` files, one per section.
 
 If you have 5 minutes: read [01-concepts/what-is-an-agent.md](./01-concepts/what-is-an-agent.md) and [03-multi-agent-workflows/README.md](./03-multi-agent-workflows/README.md). Those two together give you a working model of what's happening.
 
