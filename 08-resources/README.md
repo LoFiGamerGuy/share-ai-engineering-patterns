@@ -11,6 +11,7 @@ Resources age faster than patterns. Treat the recommendations here as opinionate
 | [Dev Environment](./dev-environment.md) | A reference setup for productive agentic work. Cross-platform patterns. Links to working examples. |
 | [Recommended Reading](./recommended-reading.md) | Curated books mapped to the seven sections. Distillations and citations from a personal reference library of ~150 technical books. |
 | [Tool Evaluations](./tool-evaluations.md) | Honest assessments of frameworks, harnesses, runtimes, and the smaller utilities that turn out to matter at scale. |
+| [Ecosystem and Plugins](./ecosystem-and-plugins.md) | Reconnaissance map of notable open-source repos: plugin collections (ECC), codebase knowledge graphs (Graphify), memory systems, observability, MCP server catalogs. |
 
 ## What's NOT here
 

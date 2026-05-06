@@ -2,6 +2,11 @@
 
 All notable changes to this repo. The patterns themselves are durable; specific tool names, flags, and provider behaviors are snapshots and may drift over time.
 
+## [0.3.1] — 2026-05-05
+
+### Added
+- `08-resources/ecosystem-and-plugins.md` — reconnaissance map of notable open-source repos (Everything Claude Code, Graphify, Graphiti, Mem0, Letta, observability platforms, MCP server catalogs, structured-output libraries, DSPy)
+
 ## [0.3.0] — 2026-05-05
 
 ### Added

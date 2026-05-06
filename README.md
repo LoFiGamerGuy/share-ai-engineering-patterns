@@ -21,7 +21,7 @@ This repo collects the durable lessons from building agentic systems: how to str
 | 05 | [Local LLMs](./05-local-llms/) | Model selection, benchmarking, when local makes sense |
 | 06 | [Token efficiency](./06-token-efficiency/) | Model tiering, prompt caching, context management, cost |
 | 07 | [Tools and MCP](./07-tools-and-mcp/) | MCP server patterns, hooks, skills, observability |
-| 08 | [Resources](./08-resources/) | Dev environment patterns, recommended reading, tool evaluations |
+| 08 | [Resources](./08-resources/) | Dev environment, recommended reading, tool evaluations, ecosystem map |
 
 ## How to read this
 
