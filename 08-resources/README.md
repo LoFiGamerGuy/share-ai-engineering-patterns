@@ -9,6 +9,8 @@ Resources age faster than patterns. Treat the recommendations here as opinionate
 | Page | What it covers |
 |------|----------------|
 | [Dev Environment](./dev-environment.md) | A reference setup for productive agentic work. Cross-platform patterns. Links to working examples. |
+| [Shell and Terminal Tools](./shell-and-terminal-tools.md) | Deep reference for shell/terminal tooling specifically for AI engineering. The modern Unix toolchain, multiplexers, runtime managers, fzf widgets, security-first scripting. |
+| [Cloud and Deployment Tools](./cloud-and-deployment-tools.md) | Patterns for hosting agents, MCP servers, sandbox envs. Always-free gateway, sleeping compute, VPN-only access, container orchestration, serverless options. |
 | [Recommended Reading](./recommended-reading.md) | Curated books mapped to the seven sections. Distillations and citations from a personal reference library of ~150 technical books. |
 | [Tool Evaluations](./tool-evaluations.md) | Honest assessments of frameworks, harnesses, runtimes, and the smaller utilities that turn out to matter at scale. |
 | [Ecosystem and Plugins](./ecosystem-and-plugins.md) | Reconnaissance map of notable open-source repos: plugin collections (ECC), codebase knowledge graphs (Graphify), memory systems, observability, MCP server catalogs. |

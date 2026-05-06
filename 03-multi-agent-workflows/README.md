@@ -9,10 +9,12 @@ This section covers the patterns. Each pattern has its own page.
 | Pattern | When to use |
 |---------|-------------|
 | [Plan / Execute / Judge](./plan-execute-judge.md) | Default for non-trivial tasks. One agent plans, one executes, one critiques. |
+| [Reflection Loops](./reflection-loops.md) | Quality improvement on a single agent's output. Generate → critique → revise. Compounds with everything else. |
 | [Agent Council](./agent-council.md) | Decisions and design questions. Multiple personas debate; you (or an arbiter) decide. |
 | [Multi-LLM Review](./multi-llm-review.md) | Important changes. Same task across providers; differences highlight risks. |
 | [Spec-Driven](./spec-driven.md) | Anything multi-step. Spec is the artifact agents work against. |
 | [Handoff](./handoff.md) | Long tasks that span sessions or move between agents. |
+| [Framework Selection](./framework-selection.md) | Decision matrix for LangGraph / CrewAI / AutoGen / LangChain when you need a framework. |
 | [Failure Modes](./failure-modes.md) | What goes wrong with multi-agent setups, and how to recognize it. |
 
 ## Why multi-agent

@@ -7,6 +7,7 @@ The "platform" is the boring infrastructure layer that makes agents productive i
 1. **Dev environment.** The shell, editor, and tooling configured so an agent can run commands without surprises. See [dev-environment.md](./dev-environment.md).
 2. **Project template.** A scaffolding pattern for new repos so they're agent-ready from day one. See [project-template.md](./project-template.md).
 3. **Agentic spine.** The set of files (`CLAUDE.md`, `AGENTS.md`, conventions, scripts) that every project carries to make it legible to agents. See [agentic-os-spine.md](./agentic-os-spine.md).
+4. **Cross-platform parity.** Keeping your setup consistent across Mac / Linux / Windows / WSL so agents (and you) get the same behavior on every machine. See [cross-platform-parity.md](./cross-platform-parity.md).
 
 ## Why this layer matters
 

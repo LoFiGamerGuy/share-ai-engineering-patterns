@@ -214,14 +214,17 @@
     <!-- What's new -->
     <section class="fo-feature">
       <div>
-        <div class="fo-feature__cap">— what's new in v0.4</div>
-        <h2 class="fo-feature__title">Diagrams, war stories, and a new section.</h2>
-        <p class="fo-feature__pull">"Most of what's left to improve isn't more content — it's scannability and credibility-building texture."</p>
+        <div class="fo-feature__cap">— what's new in v0.5</div>
+        <h2 class="fo-feature__title">Seven new pages from unmined source material.</h2>
+        <p class="fo-feature__pull">"The repo's strength is being focused. The right move was surgical additions, not a content dump."</p>
       </div>
       <div>
-        <p class="fo-feature__note"><b>Six Mermaid diagrams</b> (render natively on GitHub): <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/01-concepts/what-is-an-agent.md#the-loop">the agent loop</a> · <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/01-concepts/mcp-explained.md#how-it-works">MCP architecture</a> · <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/02-platform/agentic-os-spine.md#what-the-spine-is">agentic spine</a> · <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/03-multi-agent-workflows/plan-execute-judge.md#the-pattern">plan/execute/judge</a> · <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/04-automation/autonomous-control-levels.md#the-levels">L0–L7 autonomy spectrum</a> · <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/06-token-efficiency/context-management.md#three-layers">three-layer context model</a>.</p>
-        <p class="fo-feature__note" style="margin-top: var(--space-4);"><b>Five war stories</b> (sidebar callouts drawn from real session work): <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/01-concepts/what-is-an-agent.md">implicit context bleed</a> · <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/03-multi-agent-workflows/plan-execute-judge.md">extract-then-synthesize at 150-book scale</a> · <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/04-automation/autonomous-control-levels.md">a runaway extraction caught by a budget cap</a> · <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/06-token-efficiency/context-management.md">100× compression on a bash cookbook</a> · <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/07-tools-and-mcp/observability.md">a 30-line audit script that paid back across the whole repo</a>.</p>
-        <p class="fo-feature__note" style="margin-top: var(--space-4);"><b>Section 08 — Resources</b>: <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/08-resources/dev-environment.md">dev environment</a> · <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/08-resources/recommended-reading.md">recommended reading</a> · <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/08-resources/tool-evaluations.md">tool evaluations</a> · <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/08-resources/ecosystem-and-plugins.md">ecosystem and plugins</a>.</p>
+        <p class="fo-feature__note"><b>Multi-agent (sec 03):</b> <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/03-multi-agent-workflows/reflection-loops.md">Reflection Loops</a> (generate → critique → revise) · <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/03-multi-agent-workflows/framework-selection.md">Framework Selection</a> (LangGraph / CrewAI / AutoGen decision matrix).</p>
+        <p class="fo-feature__note" style="margin-top: var(--space-4);"><b>Automation (sec 04):</b> <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/04-automation/prompt-injection.md">Prompt Injection</a> — the structural vulnerability every agentic system has. Required reading before letting an agent run with real authority.</p>
+        <p class="fo-feature__note" style="margin-top: var(--space-4);"><b>Tools (sec 07):</b> <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/07-tools-and-mcp/tool-description-as-prompt.md">Tool Description as Prompt</a> — the most load-bearing sub-pattern of tool design, promoted to its own page.</p>
+        <p class="fo-feature__note" style="margin-top: var(--space-4);"><b>Platform (sec 02):</b> <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/02-platform/cross-platform-parity.md">Cross-Platform Parity</a> — Mac / Linux / Windows / WSL discipline.</p>
+        <p class="fo-feature__note" style="margin-top: var(--space-4);"><b>Resources (sec 08):</b> <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/08-resources/shell-and-terminal-tools.md">Shell and Terminal Tools</a> · <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/08-resources/cloud-and-deployment-tools.md">Cloud and Deployment Tools</a> — deep references for the tooling that hosts agentic work.</p>
+        <p class="fo-feature__note" style="margin-top: var(--space-4);"><b>Earlier additions (v0.4):</b> 6 Mermaid diagrams + 5 war stories. See <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/CHANGELOG.md">CHANGELOG</a> for the full history.</p>
       </div>
     </section>
 
@@ -303,6 +306,15 @@
         <div class="fo-entry__note">A starting structure for new projects that includes the spine from day one. Less to retrofit later.</div>
         <div class="fo-entry__meta"><span class="tag">Scaffolding</span></div>
       </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">02.4</div>
+        <div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/02-platform/cross-platform-parity.md">Cross-Platform Parity</a></div>
+          <div class="fo-entry__bibl">Mac · Linux · Windows · WSL</div>
+        </div>
+        <div class="fo-entry__note">The discipline that prevents "works on my machine" failures at the OS layer. Line endings, paths, fonts, shells, and what WSL is good for.</div>
+        <div class="fo-entry__meta"><span class="tag">Discipline</span></div>
+      </div>
     </section>
 
     <section class="fo-shelf">
@@ -323,6 +335,15 @@
       <div class="fo-entry">
         <div class="fo-entry__num">03.2</div>
         <div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/03-multi-agent-workflows/reflection-loops.md">Reflection Loops</a></div>
+          <div class="fo-entry__bibl">Generate → critique → revise</div>
+        </div>
+        <div class="fo-entry__note">The single most under-applied agentic pattern. A small structural change that produces noticeably better output than single-pass generation.</div>
+        <div class="fo-entry__meta"><span class="tag tag--key">High ROI</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">03.3</div>
+        <div>
           <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/03-multi-agent-workflows/spec-driven.md">Spec-Driven</a></div>
           <div class="fo-entry__bibl">Specs as the contract</div>
         </div>
@@ -330,7 +351,7 @@
         <div class="fo-entry__meta"><span class="tag">Foundation</span></div>
       </div>
       <div class="fo-entry">
-        <div class="fo-entry__num">03.3</div>
+        <div class="fo-entry__num">03.4</div>
         <div>
           <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/03-multi-agent-workflows/multi-llm-review.md">Multi-LLM Review</a></div>
           <div class="fo-entry__bibl">Same task across providers</div>
@@ -339,7 +360,7 @@
         <div class="fo-entry__meta"><span class="tag">Pattern</span></div>
       </div>
       <div class="fo-entry">
-        <div class="fo-entry__num">03.4</div>
+        <div class="fo-entry__num">03.5</div>
         <div>
           <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/03-multi-agent-workflows/agent-council.md">Agent Council</a></div>
           <div class="fo-entry__bibl">Personas debating decisions</div>
@@ -348,7 +369,7 @@
         <div class="fo-entry__meta"><span class="tag">Pattern</span></div>
       </div>
       <div class="fo-entry">
-        <div class="fo-entry__num">03.5</div>
+        <div class="fo-entry__num">03.6</div>
         <div>
           <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/03-multi-agent-workflows/handoff.md">Handoff</a></div>
           <div class="fo-entry__bibl">Long tasks across sessions</div>
@@ -357,7 +378,16 @@
         <div class="fo-entry__meta"><span class="tag">Discipline</span></div>
       </div>
       <div class="fo-entry">
-        <div class="fo-entry__num">03.6</div>
+        <div class="fo-entry__num">03.7</div>
+        <div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/03-multi-agent-workflows/framework-selection.md">Framework Selection</a></div>
+          <div class="fo-entry__bibl">LangGraph · CrewAI · AutoGen · LangChain</div>
+        </div>
+        <div class="fo-entry__note">Decision matrix for picking a multi-agent framework. The single most important question: do you need cycles?</div>
+        <div class="fo-entry__meta"><span class="tag">Decision</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">03.8</div>
         <div>
           <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/03-multi-agent-workflows/failure-modes.md">Failure Modes</a></div>
           <div class="fo-entry__bibl">What goes wrong</div>
@@ -399,6 +429,15 @@
         </div>
         <div class="fo-entry__note">When to use overnight runs, what to capture, what kills the run cleanly when something's gone wrong, and what makes the morning review fast.</div>
         <div class="fo-entry__meta"><span class="tag">Operations</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">04.4</div>
+        <div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/04-automation/prompt-injection.md">Prompt Injection</a></div>
+          <div class="fo-entry__bibl">The structural vulnerability</div>
+        </div>
+        <div class="fo-entry__note">Direct vs indirect injection, attack vectors, defenses that work, defenses that don't even though they sound like they should. Required reading before letting an agent run with real authority.</div>
+        <div class="fo-entry__meta"><span class="tag tag--key">Required reading</span></div>
       </div>
     </section>
 
@@ -490,6 +529,15 @@
       <div class="fo-entry">
         <div class="fo-entry__num">07.2</div>
         <div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/07-tools-and-mcp/tool-description-as-prompt.md">Tool Description as Prompt</a></div>
+          <div class="fo-entry__bibl">The most load-bearing sub-pattern</div>
+        </div>
+        <div class="fo-entry__note">The model decides whether to call your tool by reading the description. Tool descriptions are prompt content, not documentation. The single highest-ROI sub-pattern of tool design.</div>
+        <div class="fo-entry__meta"><span class="tag">Foundational</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">07.3</div>
+        <div>
           <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/07-tools-and-mcp/hooks.md">Hooks</a></div>
           <div class="fo-entry__bibl">Event-driven harness automation</div>
         </div>
@@ -497,7 +545,7 @@
         <div class="fo-entry__meta"><span class="tag">Pattern</span></div>
       </div>
       <div class="fo-entry">
-        <div class="fo-entry__num">07.3</div>
+        <div class="fo-entry__num">07.4</div>
         <div>
           <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/07-tools-and-mcp/skills.md">Skills</a></div>
           <div class="fo-entry__bibl">Discoverable, reusable capabilities</div>
@@ -506,7 +554,7 @@
         <div class="fo-entry__meta"><span class="tag">Pattern</span></div>
       </div>
       <div class="fo-entry">
-        <div class="fo-entry__num">07.4</div>
+        <div class="fo-entry__num">07.5</div>
         <div>
           <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/07-tools-and-mcp/observability.md">Observability</a></div>
           <div class="fo-entry__bibl">Tracing · Metrics · Audit</div>
@@ -534,6 +582,24 @@
       <div class="fo-entry">
         <div class="fo-entry__num">08.2</div>
         <div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/08-resources/shell-and-terminal-tools.md">Shell and Terminal Tools</a></div>
+          <div class="fo-entry__bibl">Modern Unix toolchain · Multiplexers · fzf widgets</div>
+        </div>
+        <div class="fo-entry__note">Deep reference for shell/terminal tooling for AI engineering. Specific picks per category, security-first scripting headers, agent-friendly output patterns, anti-patterns to avoid.</div>
+        <div class="fo-entry__meta"><span class="tag">Reference</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">08.3</div>
+        <div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/08-resources/cloud-and-deployment-tools.md">Cloud and Deployment Tools</a></div>
+          <div class="fo-entry__bibl">VMs · VPN · Reverse proxy · Containers · Serverless</div>
+        </div>
+        <div class="fo-entry__note">Patterns for hosting agents and MCP servers cost-effectively. Always-free gateway, sleeping compute, VPN-only access, container orchestration, audit/observability.</div>
+        <div class="fo-entry__meta"><span class="tag">Reference</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">08.4</div>
+        <div>
           <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/08-resources/recommended-reading.md">Recommended Reading</a></div>
           <div class="fo-entry__bibl">Curated by section topic</div>
         </div>
@@ -541,7 +607,7 @@
         <div class="fo-entry__meta"><span class="tag">Reference</span></div>
       </div>
       <div class="fo-entry">
-        <div class="fo-entry__num">08.3</div>
+        <div class="fo-entry__num">08.5</div>
         <div>
           <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/08-resources/tool-evaluations.md">Tool Evaluations</a></div>
           <div class="fo-entry__bibl">Frameworks · Harnesses · Runtimes</div>
@@ -550,7 +616,7 @@
         <div class="fo-entry__meta"><span class="tag">Decision</span></div>
       </div>
       <div class="fo-entry">
-        <div class="fo-entry__num">08.4</div>
+        <div class="fo-entry__num">08.6</div>
         <div>
           <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/08-resources/ecosystem-and-plugins.md">Ecosystem and Plugins</a></div>
           <div class="fo-entry__bibl">Reconnaissance map</div>

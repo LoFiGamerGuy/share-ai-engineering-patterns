@@ -2,6 +2,31 @@
 
 All notable changes to this repo. The patterns themselves are durable; specific tool names, flags, and provider behaviors are snapshots and may drift over time.
 
+## [0.5.0] — 2026-05-06
+
+### Added — seven new pages
+
+**Section 02 (Platform):**
+- `cross-platform-parity.md` — Mac/Linux/Windows/WSL parity discipline; the patterns that prevent "works on my machine" failures at the OS layer
+
+**Section 03 (Multi-agent workflows):**
+- `reflection-loops.md` — generate → critique → revise pattern; promoted from a sub-pattern inside plan/execute/judge to its own page
+- `framework-selection.md` — decision matrix for LangGraph / CrewAI / AutoGen / LangChain / Haystack from a multi-agent workflow perspective; complements the broader tool evaluation in section 08
+
+**Section 04 (Automation):**
+- `prompt-injection.md` — the structural vulnerability of every agentic system. Direct vs indirect injection, attack vectors, defenses that work, defenses that don't. Cites Wilson's *Developer's Playbook for LLM Security* (O'Reilly 2024)
+
+**Section 07 (Tools and MCP):**
+- `tool-description-as-prompt.md` — promoted from a paragraph inside mcp-server-patterns to its own page; the single most important sub-pattern of tool design
+
+**Section 08 (Resources):**
+- `shell-and-terminal-tools.md` — deep reference for shell/terminal tooling specifically for AI engineering; the modern Unix toolchain, multiplexers, runtime managers, fzf widgets, security-first scripting headers
+- `cloud-and-deployment-tools.md` — patterns for hosting agents, MCP servers, sandbox envs; always-free gateway, sleeping compute, VPN-only access, container orchestration, serverless
+
+### Changed
+- All five affected section READMEs updated with new page entries
+- README and leaders guide updated to reflect new content
+
 ## [0.4.1] — 2026-05-06
 
 ### Changed

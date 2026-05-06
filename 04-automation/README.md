@@ -20,6 +20,8 @@ This section organizes automation along three axes:
 
 **[Autonomous control levels.](./autonomous-control-levels.md)** How much the agent decides for itself. From "asks permission before any tool call" to "runs in a tight loop without supervision." The right level depends on the task and the safeguards.
 
+**[Prompt injection.](./prompt-injection.md)** The structural vulnerability of every agentic system. What it is, what works as defense, what doesn't work even though it sounds like it should. Required reading before letting an agent run with real authority.
+
 ## The trust-blast-radius tradeoff
 
 Two questions for every automation setup:

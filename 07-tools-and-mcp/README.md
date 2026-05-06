@@ -9,6 +9,7 @@ If you haven't read the [MCP explainer](../01-concepts/mcp-explained.md), start 
 | Pattern | What it does |
 |---------|--------------|
 | [MCP Server Patterns](./mcp-server-patterns.md) | How to design tools agents can actually use. Naming, scoping, descriptions, errors. |
+| [Tool Description as Prompt](./tool-description-as-prompt.md) | The single most important sub-pattern of tool design. The model decides when to call your tool by reading what you wrote. |
 | [Hooks](./hooks.md) | Event-driven automation in the agent harness. Run code before/after tool calls, on session start, on completion. |
 | [Skills](./skills.md) | Discoverable, reusable capabilities. The difference between skills and tools, and when to use each. |
 | [Observability](./observability.md) | Logging, tracing, and metrics for agent runs. What to capture and how to read it. |
