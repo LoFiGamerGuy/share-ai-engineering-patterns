@@ -41,12 +41,12 @@ Concrete artifacts that show what the patterns look like as files: a real-shape 
 
 ## Rendered version
 
-For a polished, hand-around version, the [`rendered/`](./rendered/) folder contains:
+For a polished, hand-around version, the [`docs/`](./docs/) folder contains:
 
-- [`rendered/index.html`](./rendered/index.html) — the catalogue / front door for the seven sections
-- [`rendered/leaders-memo.html`](./rendered/leaders-memo.html) — the leaders guide as a one-page memo
+- [`docs/index.html`](./docs/index.html) — the catalogue / front door for the seven sections
+- [`docs/leaders-memo.html`](./docs/leaders-memo.html) — the leaders guide as a one-page memo
 
-Open either file in a browser locally, or host the `rendered/` folder via GitHub Pages or any static host.
+Open either file in a browser locally, or host the `docs/` folder via GitHub Pages or any static host.
 
 ## Caveat
 
