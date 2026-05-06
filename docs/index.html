@@ -211,6 +211,20 @@
       </div>
     </section>
 
+    <!-- What's new -->
+    <section class="fo-feature">
+      <div>
+        <div class="fo-feature__cap">— what's new in v0.4</div>
+        <h2 class="fo-feature__title">Diagrams, war stories, and a new section.</h2>
+        <p class="fo-feature__pull">"Most of what's left to improve isn't more content — it's scannability and credibility-building texture."</p>
+      </div>
+      <div>
+        <p class="fo-feature__note"><b>Six Mermaid diagrams</b> (render natively on GitHub): <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/01-concepts/what-is-an-agent.md#the-loop">the agent loop</a> · <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/01-concepts/mcp-explained.md#how-it-works">MCP architecture</a> · <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/02-platform/agentic-os-spine.md#what-the-spine-is">agentic spine</a> · <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/03-multi-agent-workflows/plan-execute-judge.md#the-pattern">plan/execute/judge</a> · <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/04-automation/autonomous-control-levels.md#the-levels">L0–L7 autonomy spectrum</a> · <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/06-token-efficiency/context-management.md#three-layers">three-layer context model</a>.</p>
+        <p class="fo-feature__note" style="margin-top: var(--space-4);"><b>Five war stories</b> (sidebar callouts drawn from real session work): <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/01-concepts/what-is-an-agent.md">implicit context bleed</a> · <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/03-multi-agent-workflows/plan-execute-judge.md">extract-then-synthesize at 150-book scale</a> · <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/04-automation/autonomous-control-levels.md">a runaway extraction caught by a budget cap</a> · <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/06-token-efficiency/context-management.md">100× compression on a bash cookbook</a> · <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/07-tools-and-mcp/observability.md">a 30-line audit script that paid back across the whole repo</a>.</p>
+        <p class="fo-feature__note" style="margin-top: var(--space-4);"><b>Section 08 — Resources</b>: <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/08-resources/dev-environment.md">dev environment</a> · <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/08-resources/recommended-reading.md">recommended reading</a> · <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/08-resources/tool-evaluations.md">tool evaluations</a> · <a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/08-resources/ecosystem-and-plugins.md">ecosystem and plugins</a>.</p>
+      </div>
+    </section>
+
     <!-- The seven shelves -->
     <section class="fo-shelf">
       <div class="fo-shelf__head">
@@ -263,13 +277,31 @@
       </div>
       <p class="fo-shelf__intro">Setting up a project so agents can be productive in it. Teams that skip this end up with agents that flail — they don't know how to run tests, find the build script, or follow conventions.</p>
       <div class="fo-entry">
-        <div class="fo-entry__num">02</div>
+        <div class="fo-entry__num">02.1</div>
         <div>
-          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/tree/main/02-platform">Platform — the four pages</a></div>
-          <div class="fo-entry__bibl">Overview · Spine · Dev env · Project template</div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/02-platform/agentic-os-spine.md">The Agentic OS Spine</a></div>
+          <div class="fo-entry__bibl">CLAUDE.md · AGENTS.md · specs/ · .mcp.json</div>
         </div>
-        <div class="fo-entry__note">The agentic spine, dev environment patterns, project scaffolding. The infrastructure layer that compounds value across every agent run.</div>
+        <div class="fo-entry__note">The small set of files and conventions that turn a regular project into one any agent can navigate productively. Includes a file-layout diagram.</div>
         <div class="fo-entry__meta"><span class="tag tag--key">High leverage</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">02.2</div>
+        <div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/02-platform/dev-environment.md">Dev Environment</a></div>
+          <div class="fo-entry__bibl">Abstract patterns</div>
+        </div>
+        <div class="fo-entry__note">The patterns that make a development environment productive for agentic work. Concrete worked examples live in section 08.</div>
+        <div class="fo-entry__meta"><span class="tag">Setup</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">02.3</div>
+        <div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/02-platform/project-template.md">Project Template</a></div>
+          <div class="fo-entry__bibl">Scaffolding for new projects</div>
+        </div>
+        <div class="fo-entry__note">A starting structure for new projects that includes the spine from day one. Less to retrofit later.</div>
+        <div class="fo-entry__meta"><span class="tag">Scaffolding</span></div>
       </div>
     </section>
 
@@ -280,13 +312,58 @@
       </div>
       <p class="fo-shelf__intro">Single agents have structural limits — no internal critic, single perspective, sequential thinking. Multi-agent workflows close all three. The single highest-leverage move in agentic engineering.</p>
       <div class="fo-entry">
-        <div class="fo-entry__num">03</div>
+        <div class="fo-entry__num">03.1</div>
         <div>
-          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/tree/main/03-multi-agent-workflows">Multi-agent workflows — the seven pages</a></div>
-          <div class="fo-entry__bibl">Plan/execute/judge · Council · Multi-LLM review · Spec-driven · Handoff · Failure modes</div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/03-multi-agent-workflows/plan-execute-judge.md">Plan / Execute / Judge</a></div>
+          <div class="fo-entry__bibl">The workhorse pattern</div>
         </div>
-        <div class="fo-entry__note">Pattern catalogue for coordinating multiple agents. Plan/execute/judge is the default; the others compose with it.</div>
+        <div class="fo-entry__note">Three roles, three agent runs. Includes a flow diagram, a real example prompt set, and a war story about scaling this pattern to a 150-book extraction job.</div>
         <div class="fo-entry__meta"><span class="tag tag--key">Highest leverage</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">03.2</div>
+        <div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/03-multi-agent-workflows/spec-driven.md">Spec-Driven</a></div>
+          <div class="fo-entry__bibl">Specs as the contract</div>
+        </div>
+        <div class="fo-entry__note">Why specs are the connective tissue of multi-agent work, and what a useful spec actually looks like.</div>
+        <div class="fo-entry__meta"><span class="tag">Foundation</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">03.3</div>
+        <div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/03-multi-agent-workflows/multi-llm-review.md">Multi-LLM Review</a></div>
+          <div class="fo-entry__bibl">Same task across providers</div>
+        </div>
+        <div class="fo-entry__note">Run the same critique across two providers. Differences highlight risks no single model would catch.</div>
+        <div class="fo-entry__meta"><span class="tag">Pattern</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">03.4</div>
+        <div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/03-multi-agent-workflows/agent-council.md">Agent Council</a></div>
+          <div class="fo-entry__bibl">Personas debating decisions</div>
+        </div>
+        <div class="fo-entry__note">For design decisions and architectural questions where multiple perspectives surface what one agent would miss.</div>
+        <div class="fo-entry__meta"><span class="tag">Pattern</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">03.5</div>
+        <div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/03-multi-agent-workflows/handoff.md">Handoff</a></div>
+          <div class="fo-entry__bibl">Long tasks across sessions</div>
+        </div>
+        <div class="fo-entry__note">The discipline that makes multi-session and multi-agent work survive context loss.</div>
+        <div class="fo-entry__meta"><span class="tag">Discipline</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">03.6</div>
+        <div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/03-multi-agent-workflows/failure-modes.md">Failure Modes</a></div>
+          <div class="fo-entry__bibl">What goes wrong</div>
+        </div>
+        <div class="fo-entry__note">The recurring failure modes of multi-agent setups, and how to recognize them before they ship.</div>
+        <div class="fo-entry__meta"><span class="tag">Diagnostic</span></div>
       </div>
     </section>
 
@@ -297,12 +374,30 @@
       </div>
       <p class="fo-shelf__intro">Where you have to think hard about trust and blast radius. Levels of autonomy, sandboxing, overnight runs, and the failure modes of leaving agents on by themselves.</p>
       <div class="fo-entry">
-        <div class="fo-entry__num">04</div>
+        <div class="fo-entry__num">04.1</div>
         <div>
-          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/tree/main/04-automation">Automation — the four pages</a></div>
-          <div class="fo-entry__bibl">Control levels · Sandboxes · Overnight runs</div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/04-automation/autonomous-control-levels.md">Autonomous Control Levels</a></div>
+          <div class="fo-entry__bibl">L0 to L7 spectrum</div>
         </div>
-        <div class="fo-entry__note">Five levels of autonomy from "always asks" to "fully unattended in CI". Sandbox patterns. Overnight loop discipline. Cost ceilings as guardrails.</div>
+        <div class="fo-entry__note">Eight levels of autonomy from "suggest only" to "fully autonomous." Includes a color-coded spectrum diagram and a war story about a runaway extraction caught by a per-task budget.</div>
+        <div class="fo-entry__meta"><span class="tag tag--key">Foundational</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">04.2</div>
+        <div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/04-automation/sandbox-environments.md">Sandbox Environments</a></div>
+          <div class="fo-entry__bibl">Where unattended runs should live</div>
+        </div>
+        <div class="fo-entry__note">Containment patterns for letting agents run with real authority without putting your environment at risk.</div>
+        <div class="fo-entry__meta"><span class="tag">Operations</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">04.3</div>
+        <div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/04-automation/overnight-runs.md">Overnight Runs</a></div>
+          <div class="fo-entry__bibl">Discipline for letting it cook</div>
+        </div>
+        <div class="fo-entry__note">When to use overnight runs, what to capture, what kills the run cleanly when something's gone wrong, and what makes the morning review fast.</div>
         <div class="fo-entry__meta"><span class="tag">Operations</span></div>
       </div>
     </section>
@@ -314,13 +409,22 @@
       </div>
       <p class="fo-shelf__intro">The capability gap between local and frontier is real, and shrinking, but not closed. When local is the right call, when it isn't, and how to evaluate which models actually work for your tasks.</p>
       <div class="fo-entry">
-        <div class="fo-entry__num">05</div>
+        <div class="fo-entry__num">05.1</div>
         <div>
-          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/tree/main/05-local-llms">Local LLMs — the three pages</a></div>
-          <div class="fo-entry__bibl">Selection · Benchmarking · When to use</div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/05-local-llms/model-selection.md">Model Selection</a></div>
+          <div class="fo-entry__bibl">How to pick a local model for a task</div>
         </div>
-        <div class="fo-entry__note">Privacy-sensitive work, very high-volume tasks, experimentation. The criteria for choosing local over hosted, and the benchmarks that actually predict task performance.</div>
-        <div class="fo-entry__meta"><span class="tag">Capability</span></div>
+        <div class="fo-entry__note">Matching open-model capability to task needs without paying the frontier-tier cost. The criteria that actually matter beyond the leaderboard rank.</div>
+        <div class="fo-entry__meta"><span class="tag">Decision</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">05.2</div>
+        <div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/05-local-llms/benchmarking.md">Benchmarking</a></div>
+          <div class="fo-entry__bibl">Your evals over vendor numbers</div>
+        </div>
+        <div class="fo-entry__note">Vendor benchmarks age in days. How to design and run evals that predict real performance on your tasks.</div>
+        <div class="fo-entry__meta"><span class="tag">Discipline</span></div>
       </div>
     </section>
 
@@ -331,13 +435,40 @@
       </div>
       <p class="fo-shelf__intro">A 5–10x cost reduction is achievable with no quality loss if you apply prompt caching, model tiering, and context discipline correctly. Most teams capture none of it.</p>
       <div class="fo-entry">
-        <div class="fo-entry__num">06</div>
+        <div class="fo-entry__num">06.1</div>
         <div>
-          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/tree/main/06-token-efficiency">Token efficiency — the four pages</a></div>
-          <div class="fo-entry__bibl">Tiering · Caching · Context · Cost</div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/06-token-efficiency/prompt-caching.md">Prompt Caching</a></div>
+          <div class="fo-entry__bibl">Single biggest cost lever</div>
         </div>
-        <div class="fo-entry__note">Routing work to the right model. Prompt caching for stable prefixes. Three-layer context management. How to estimate, monitor, and forecast the bill.</div>
-        <div class="fo-entry__meta"><span class="tag tag--key">Save 5-10x</span></div>
+        <div class="fo-entry__note">Stable prefix first; variable content last. Cuts input cost 70-90% on cached calls. Most teams structure prompts to defeat the cache without realizing it.</div>
+        <div class="fo-entry__meta"><span class="tag tag--key">Highest ROI</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">06.2</div>
+        <div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/06-token-efficiency/model-tiering.md">Model Tiering</a></div>
+          <div class="fo-entry__bibl">Match capability to task</div>
+        </div>
+        <div class="fo-entry__note">Frontier for hard reasoning, mid-tier for execution, small for batch. Defaulting to the best model on every call is the most common and most expensive mistake.</div>
+        <div class="fo-entry__meta"><span class="tag">Decision</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">06.3</div>
+        <div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/06-token-efficiency/context-management.md">Context Management</a></div>
+          <div class="fo-entry__bibl">Three layers · Caching · Compaction · Retrieval</div>
+        </div>
+        <div class="fo-entry__note">Includes a three-layer diagram and a war story about a 100× compression ratio on a real bash cookbook synthesis.</div>
+        <div class="fo-entry__meta"><span class="tag">Pattern</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">06.4</div>
+        <div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/06-token-efficiency/cost-estimation.md">Cost Estimation</a></div>
+          <div class="fo-entry__bibl">Budgeting and forecasting</div>
+        </div>
+        <div class="fo-entry__note">The unit economics of agentic work, what "expensive" actually looks like, and the alerts that protect against runaway loops.</div>
+        <div class="fo-entry__meta"><span class="tag">Operations</span></div>
       </div>
     </section>
 
@@ -348,13 +479,40 @@
       </div>
       <p class="fo-shelf__intro">Tool design is where most agentic workflows succeed or fail. The model is downstream of the tools you give it. Hooks add guardrails the model can't forget. Skills package recurring expertise.</p>
       <div class="fo-entry">
-        <div class="fo-entry__num">07</div>
+        <div class="fo-entry__num">07.1</div>
         <div>
-          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/tree/main/07-tools-and-mcp">Tools and MCP — the four pages</a></div>
-          <div class="fo-entry__bibl">MCP server patterns · Hooks · Skills · Observability</div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/07-tools-and-mcp/mcp-server-patterns.md">MCP Server Patterns</a></div>
+          <div class="fo-entry__bibl">Tool design discipline</div>
         </div>
-        <div class="fo-entry__note">How to design tools agents actually use. Event-driven harness automation. Discoverable skills. The instrumentation that makes the whole thing legible.</div>
-        <div class="fo-entry__meta"><span class="tag">Foundations</span></div>
+        <div class="fo-entry__note">The longest read in this section because tool design has the most subtle craft. Naming, scoping, descriptions, errors — the choices that determine whether an agent uses a tool well or badly.</div>
+        <div class="fo-entry__meta"><span class="tag tag--key">Craft</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">07.2</div>
+        <div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/07-tools-and-mcp/hooks.md">Hooks</a></div>
+          <div class="fo-entry__bibl">Event-driven harness automation</div>
+        </div>
+        <div class="fo-entry__note">Pre/post tool-use guardrails, session-start context loading, the discipline that should not depend on the model remembering.</div>
+        <div class="fo-entry__meta"><span class="tag">Pattern</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">07.3</div>
+        <div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/07-tools-and-mcp/skills.md">Skills</a></div>
+          <div class="fo-entry__bibl">Discoverable, reusable capabilities</div>
+        </div>
+        <div class="fo-entry__note">The slot between a tool and a workflow. How organizational knowledge accrues into the agent over time.</div>
+        <div class="fo-entry__meta"><span class="tag">Pattern</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">07.4</div>
+        <div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/07-tools-and-mcp/observability.md">Observability</a></div>
+          <div class="fo-entry__bibl">Tracing · Metrics · Audit</div>
+        </div>
+        <div class="fo-entry__note">Three layers: per-session traces, aggregate metrics, audit trail. Includes a war story about a 30-line audit script that paid back across the whole repo.</div>
+        <div class="fo-entry__meta"><span class="tag">Operations</span></div>
       </div>
     </section>
 
@@ -365,13 +523,40 @@
       </div>
       <p class="fo-shelf__intro">What dev environment to set up, what to read, which tools to actually pick. Opinionated, dated, and re-evaluated annually — the picks change but the criteria hold up.</p>
       <div class="fo-entry">
-        <div class="fo-entry__num">08</div>
+        <div class="fo-entry__num">08.1</div>
         <div>
-          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/tree/main/08-resources">Resources — the three pages</a></div>
-          <div class="fo-entry__bibl">Dev environment · Recommended reading · Tool evaluations</div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/08-resources/dev-environment.md">Dev Environment</a></div>
+          <div class="fo-entry__bibl">Six-layer reference setup</div>
         </div>
-        <div class="fo-entry__note">A reference dev setup with cross-platform parity. A curated reading list distilled from a ~150-book technical library. Honest assessments of frameworks, harnesses, and runtimes worth committing to.</div>
-        <div class="fo-entry__meta"><span class="tag">Practical</span></div>
+        <div class="fo-entry__note">A productive cross-platform setup for agentic work, with links to working public examples (terminal-stack, dotfiles, macOS counterpart, fresh-machine env synth).</div>
+        <div class="fo-entry__meta"><span class="tag tag--key">Practical</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">08.2</div>
+        <div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/08-resources/recommended-reading.md">Recommended Reading</a></div>
+          <div class="fo-entry__bibl">Curated by section topic</div>
+        </div>
+        <div class="fo-entry__note">A curated reading list mapped to sections 01-07, distilled from a personal reference library of ~150 technical books. Plus shell/devops and engineering leadership picks.</div>
+        <div class="fo-entry__meta"><span class="tag">Reference</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">08.3</div>
+        <div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/08-resources/tool-evaluations.md">Tool Evaluations</a></div>
+          <div class="fo-entry__bibl">Frameworks · Harnesses · Runtimes</div>
+        </div>
+        <div class="fo-entry__note">Diplomatic but technically direct assessments of agent harnesses (Claude Code, Cursor, Aider), multi-agent frameworks (LangGraph, CrewAI, AutoGen), local LLM runtimes (Ollama, vLLM), and token-saving utilities (rtk-ai, caveman).</div>
+        <div class="fo-entry__meta"><span class="tag">Decision</span></div>
+      </div>
+      <div class="fo-entry">
+        <div class="fo-entry__num">08.4</div>
+        <div>
+          <div class="fo-entry__title"><a href="https://github.com/LoFiGamerGuy/share-ai-engineering-patterns/blob/main/08-resources/ecosystem-and-plugins.md">Ecosystem and Plugins</a></div>
+          <div class="fo-entry__bibl">Reconnaissance map</div>
+        </div>
+        <div class="fo-entry__note">Notable open-source repos worth knowing about: Everything Claude Code, Graphify, Graphiti/Mem0/Letta, observability platforms, MCP server catalogs, structured-output libraries, DSPy.</div>
+        <div class="fo-entry__meta"><span class="tag">Discovery</span></div>
       </div>
     </section>
 

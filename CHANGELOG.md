@@ -2,6 +2,12 @@
 
 All notable changes to this repo. The patterns themselves are durable; specific tool names, flags, and provider behaviors are snapshots and may drift over time.
 
+## [0.4.1] — 2026-05-06
+
+### Changed
+- Expanded `docs/index.html` (Foyer catalogue): every section shelf now lists individual pages with descriptions (was previously collapsed to a single entry per section for sections 02-08; only section 01 was fully expanded). The catalogue now functions as a genuine navigation hub from the published Pages site.
+- Added a "What's new in v0.4" feature box with direct anchor links to the six new diagrams, the five war stories, and the four pages of section 08.
+
 ## [0.4.0] — 2026-05-06
 
 ### Added
