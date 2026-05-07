@@ -2,6 +2,11 @@
 
 All notable changes to this repo. The patterns themselves are durable; specific tool names, flags, and provider behaviors are snapshots and may drift over time.
 
+## [0.6.5] — 2026-05-07
+
+### Added
+- `cross-platform-ai-dev-env-playbook` added to the "Related public repos" section in main README and Foyer catalogue colophon. The playbook is the concrete operational counterpart to sections 02 and 08 of this repo.
+
 ## [0.6.4] — 2026-05-07
 
 ### Added
