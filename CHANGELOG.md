@@ -2,6 +2,20 @@
 
 All notable changes to this repo. The patterns themselves are durable; specific tool names, flags, and provider behaviors are snapshots and may drift over time.
 
+## [0.6.6] — 2026-05-07
+
+### Changed
+- **Major rewrite of `08-resources/recommended-reading.md`.** Previous list was ~70% O'Reilly and missing several foundational works. Revised list:
+  - Adds Mollick's *Co-Intelligence* and Kahneman's *Thinking, Fast and Slow* as the two anchor reads
+  - Adds adjacent psychology/decision-making category (Housel's *Psychology of Money*, Epstein's *Range*, Taleb's *Black Swan* and *Antifragile*)
+  - Adds adjacent software craft (Ousterhout, Pragmatic Programmer, Kleppmann, Fowler, Evans, Feathers)
+  - Adds adjacent engineering leadership (Larson x2, Fournier, Zhuo)
+  - Adds adjacent writing/communication (Zinsser, Pinker)
+  - Adds further AI books from non-O'Reilly publishers (Mitchell, Russell, Christian, Suleyman, Li)
+  - Removes redundant LangChain entries
+  - Replaces O'Reilly Linux stack with No Starch's *The Linux Command Line* (Shotts) and the systems administration encyclopedia
+  - Explicit note in the README about publisher mix; explicit note that the list is books only (no articles/papers/whitepapers)
+
 ## [0.6.5] — 2026-05-07
 
 ### Added
