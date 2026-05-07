@@ -2,6 +2,11 @@
 
 All notable changes to this repo. The patterns themselves are durable; specific tool names, flags, and provider behaviors are snapshots and may drift over time.
 
+## [0.6.4] — 2026-05-07
+
+### Added
+- `alpha-reader-toolkit` added to the "Related public repos" section in main README and Foyer catalogue colophon. The toolkit is a domain-specific application of the multi-persona, anti-sycophancy, and reflexive-critique patterns documented in this repo.
+
 ## [0.6.3] — 2026-05-07
 
 ### Added
