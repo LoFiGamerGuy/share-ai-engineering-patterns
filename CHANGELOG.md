@@ -2,6 +2,14 @@
 
 All notable changes to this repo. The patterns themselves are durable; specific tool names, flags, and provider behaviors are snapshots and may drift over time.
 
+## [0.6.1] — 2026-05-06
+
+### Added
+- "Related public repos" section in main README pointing at `five-register-design-system` (the design system this repo's catalogue and leaders memo were built with), `terminal-stack`, and `dotfiles`.
+- "Related public repos" line in the Foyer catalogue colophon for the same purpose.
+
+This establishes a consistent cross-linking pattern that future related-repo releases will join.
+
 ## [0.6.0] — 2026-05-06
 
 ### Added

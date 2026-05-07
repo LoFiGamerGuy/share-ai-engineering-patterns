@@ -66,6 +66,16 @@ The patterns here reflect the state of the tools as of writing (May 2026). Model
 - [CHANGELOG](./CHANGELOG.md) — what's been added and when
 - [CONTRIBUTING](./CONTRIBUTING.md) — how to suggest fixes, add war stories, or contribute new content
 
+## Related public repos
+
+This repo is part of a small family of public reference material. The patterns here describe *how to work*; the others give you the artifacts and infrastructure to apply those patterns.
+
+- **[five-register-design-system](https://github.com/LoFiGamerGuy/five-register-design-system)** — Design system for the artifacts agentic work produces (decks, docs, memos, dashboards, catalogues, chapbooks). MIT licensed. The catalogue and leaders memo for *this* repo were built using it.
+- **[terminal-stack](https://github.com/LoFiGamerGuy/terminal-stack)** — Opinionated terminal kit for Git Bash on Windows. 24 themes, modern Unix tools, fzf widgets, multi-pane launchers. Cross-platform parity with the Mac/Linux side.
+- **[dotfiles](https://github.com/LoFiGamerGuy/dotfiles)** — Personal dotfiles. Shell config, prompt, tool integrations. Idempotent installer.
+
+More repos in this family will be released over time. The current set will be expanded with explicit cross-links as they ship.
+
 ## Author and license
 
 Written by **Ryan Gosnell**. Licensed under [CC BY 4.0](./LICENSE) — share, adapt, build on; just credit the source.
