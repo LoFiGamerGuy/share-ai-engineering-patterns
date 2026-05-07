@@ -2,6 +2,11 @@
 
 All notable changes to this repo. The patterns themselves are durable; specific tool names, flags, and provider behaviors are snapshots and may drift over time.
 
+## [0.6.3] — 2026-05-07
+
+### Added
+- `reference-library-methodology` added to the "Related public repos" section in main README and Foyer catalogue colophon. The methodology is the source of the "extract-then-synthesize" pattern referenced in section 03.
+
 ## [0.6.2] — 2026-05-07
 
 ### Added
