@@ -2,6 +2,11 @@
 
 All notable changes to this repo. The patterns themselves are durable; specific tool names, flags, and provider behaviors are snapshots and may drift over time.
 
+## [0.6.2] — 2026-05-07
+
+### Added
+- `council-of-five` added to the "Related public repos" section in main README and Foyer catalogue colophon. Council of Five is a complementary framework: plan/execute/judge parallelizes execution; Council of Five parallelizes perspective.
+
 ## [0.6.1] — 2026-05-06
 
 ### Added

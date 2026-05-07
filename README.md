@@ -68,8 +68,9 @@ The patterns here reflect the state of the tools as of writing (May 2026). Model
 
 ## Related public repos
 
-This repo is part of a small family of public reference material. The patterns here describe *how to work*; the others give you the artifacts and infrastructure to apply those patterns.
+This repo is part of a small family of public reference material. The patterns here describe *how to work*; the others give you the artifacts, infrastructure, and complementary frameworks.
 
+- **[council-of-five](https://github.com/LoFiGamerGuy/council-of-five)** — Multi-perspective decision framework. Five voices, one Chair, structured deliberation. *Complementary* to the multi-agent patterns documented here — plan/execute/judge parallelizes execution; Council of Five parallelizes perspective. CC BY 4.0.
 - **[five-register-design-system](https://github.com/LoFiGamerGuy/five-register-design-system)** — Design system for the artifacts agentic work produces (decks, docs, memos, dashboards, catalogues, chapbooks). MIT licensed. The catalogue and leaders memo for *this* repo were built using it.
 - **[terminal-stack](https://github.com/LoFiGamerGuy/terminal-stack)** — Opinionated terminal kit for Git Bash on Windows. 24 themes, modern Unix tools, fzf widgets, multi-pane launchers. Cross-platform parity with the Mac/Linux side.
 - **[dotfiles](https://github.com/LoFiGamerGuy/dotfiles)** — Personal dotfiles. Shell config, prompt, tool integrations. Idempotent installer.
